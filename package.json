@@ -1,0 +1,23 @@
+{
+  "name": "my_modguild_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass --watch styles:dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andival-Sei/my_modguild_project.git"
+  },
+  "author": "Andival-Sei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andival-Sei/my_modguild_project/issues"
+  },
+  "homepage": "https://github.com/Andival-Sei/my_modguild_project#readme",
+  "devDependencies": {
+    "sass": "^1.83.1"
+  }
+}
