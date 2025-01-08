@@ -1,3 +1,10 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -5,20 +12,138 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+button {
+  border: none;
   padding: 0;
-  margin: 0;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
-}
-
-* {
-  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
 
 body {
-  background-color: #30404c;
-  color: white;
+  font-family: "Inter", sans-serif;
+  color: #dfdfd6;
+  position: relative;
+  block-size: 100%;
+  background-color: #1b1b1f;
+}
+
+.container {
+  max-inline-size: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  position: sticky;
+  inset: 0;
+  padding: 6px 0;
+  border-block-end: 1px solid #000;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__nav-item-link {
+  transition: color 0.3s ease;
+}
+.header__nav-item-link:hover {
+  color: #9499ff;
+}
+
+.header-main {
+  background-color: rgba(27, 27, 31, 0.5);
+  backdrop-filter: blur(10px);
+}
+.header-main__container {
+  margin: 0 auto;
+  max-inline-size: 50%;
+}
+.header-main__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-main__menu-list {
+  display: flex;
+  gap: 50px;
+}
+
+.logo {
+  inline-size: 50px;
+  block-size: 50px;
+}
+
+.main {
+  text-align: center;
+  background-color: #1b1b1f;
+  block-size: 3000px;
+}
+
+.welcome__content {
+  padding-block-start: 300px;
+}
+.welcome__title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.88px;
+  font-size: 44px;
+  text-wrap: wrap;
+  max-inline-size: 700px;
+  text-align: center;
+  background: linear-gradient(180deg, rgb(229, 221, 221) 0%, rgb(234, 135, 50) 100%);
+  background-clip: text;
+  color: transparent;
+  cursor: default;
+  margin: 0 auto; /* Добавлено для центрирования */
+}
+.welcome__description {
+  margin: 20px auto 0;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  max-inline-size: 700px;
+  text-wrap: balance;
+  cursor: default;
+  color: #a9a9a9;
+}
+.welcome__buttons {
+  margin: 60px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.welcome__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a9a9a9;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  inline-size: 8rem;
+  block-size: 3rem;
+  color: #cdf0fe;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6), 0 10px 10px rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.welcome__button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.7), 0 15px 12px rgba(0, 0, 0, 0.8);
+}
+.welcome__button:hover:active {
+  transform: translateY(5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+.welcome__button-start {
+  background-color: #e9934b;
+  background: linear-gradient(45deg, rgb(201, 125, 55) 27%, rgb(221, 79, 31) 69%, rgb(49, 48, 47) 100%);
+}
+.welcome__button-youtube {
+  background: linear-gradient(-45deg, rgb(204, 62, 58) 27%, rgb(221, 31, 31) 69%, rgb(49, 48, 47) 100%);
 }

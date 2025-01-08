@@ -1,0 +1,91 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.main {
+  text-align: center;
+  background-color: v.$color_darkGrey;
+  block-size: 3000px;
+}
+
+.welcome {
+  &__content {
+    padding-block-start: 300px;
+  }
+  &__title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.88px;
+    font-size: 44px;
+    text-wrap: wrap;
+    max-inline-size: 700px;
+    text-align: center;
+    background: linear-gradient(
+      180deg,
+      rgb(229, 221, 221) 0%,
+      rgb(234, 135, 50) 100%
+    );
+    background-clip: text;
+    color: transparent;
+    cursor: default;
+    margin: 0 auto; /* Добавлено для центрирования */
+  }
+  &__description {
+    margin: 20px auto 0;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    max-inline-size: 700px;
+    text-wrap: balance;
+    cursor: default;
+    color: v.$color_grey;
+  }
+  &__buttons {
+    margin: 60px auto 0;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: v.$color_grey;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    inline-size: 8rem;
+    block-size: 3rem;
+    color: v.$color_paleBlue;
+    @include m.box_shadow(4);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    &:hover {
+      transform: translateY(-5px);
+      @include m.box_shadow(5);
+    }
+    &:hover:active {
+      transform: translateY(5px);
+      @include m.box_shadow(3);
+    }
+
+    &-start {
+      background-color: v.$color_warmOrange;
+      background: linear-gradient(
+        45deg,
+        rgb(201, 125, 55) 27%,
+        rgb(221, 79, 31) 69%,
+        rgb(49, 48, 47) 100%
+      );
+    }
+    &-youtube {
+      background: linear-gradient(
+        -45deg,
+        rgb(204, 62, 58) 27%,
+        rgb(221, 31, 31) 69%,
+        rgb(49, 48, 47) 100%
+      );
+    }
+  }
+}
