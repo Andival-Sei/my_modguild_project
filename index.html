@@ -1,17 +1,80 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-	<title>Modding Guild</title>
-</head>
-<body>
-	
-</body>
+	<link rel="stylesheet" href="dist/index.css" />
+	<link rel="icon" href="assets/logo_png.ico" type="image/x-icon" />
+    <title>Modding Guild</title>
+  </head>
+  <body>
+    <header class="header header-main">
+      <div class="header-main__container">
+        <nav class="header-main__menu">
+          <ul class="header-main__menu-list">
+            <li class="header-main__menu-item">
+              <a href="#" class="header__nav-item-link">
+              	<img
+	                src="assets/webp/logo_png.webp"
+	                alt="logo"
+	                class="header-main__logo logo"
+	              />
+				  <p>Modding Guild</p>
+              </a>
+            </li>
+            <li class="header-main__menu-item">
+              <a href="#" class="header__nav-item-link">Главная</a>
+            </li>
+            <li class="header-main__menu-item">
+              <a href="#" class="header__nav-item-link">Руководство</a>
+            </li>
+			<li class="header__nav-item nav__item">
+			  <a href="#" class="header__nav-item-link">Изменения</a>
+			</li>
+			<li class="header__nav-item nav__item">
+			  <a href="#" class="header__nav-item-link">Контакты</a>
+			</li>
+          </ul>
+
+          <ul class="header__nav-list-right">
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+	<main>
+		<section class="welcome">
+			<div class="container">
+            <div class="welcome__content">
+              <h1 class="welcome__title">
+                The Elder Scrolls V: Skyrim Anniversary Edition
+              </h1>
+              <p class="welcome__description">
+                Огромное руководство по моддингу Скайрима во всех его аспектах.
+              </p>
+              <div class="welcome__buttons">
+                <button
+                  type="button"
+                  class="welcome__button welcome__button-start button"
+                >
+                  <a href="pages/introduction.html">Начать</a>
+                </button>
+                <button
+                  type="button"
+                  class="welcome__button welcome__button-youtube button"
+                >
+                  <a href="#">YouTube</a>
+                </button>
+              </div>
+            </div>
+        </div>
+		</section>
+	</main>
+  </body>
 </html>
