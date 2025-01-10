@@ -38,7 +38,7 @@ body {
 .header {
   position: sticky;
   inset: 0;
-  padding: 6px 0;
+  padding: 6px 50px;
   border-block-end: 1px solid #000;
 }
 .header__container {
@@ -146,4 +146,44 @@ body {
 }
 .welcome__button-youtube {
   background: linear-gradient(-45deg, rgb(204, 62, 58) 27%, rgb(221, 31, 31) 69%, rgb(49, 48, 47) 100%);
+}
+
+.content__container {
+  padding: 20px 50px;
+}
+.content__block-title {
+  position: relative;
+  margin-block-start: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content__block-title::before, .content__block-title::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 1px;
+  background-color: #a9a9a9;
+}
+.content__block-title::before {
+  top: -10px;
+  left: 30%;
+}
+.content__block-title::after {
+  bottom: -10px;
+  right: 30%;
+}
+.content__title {
+  font: inherit;
+  font-size: 3rem;
+}
+.content__block-text {
+  margin-block-start: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.content__text {
+  line-height: 1.65em;
 }

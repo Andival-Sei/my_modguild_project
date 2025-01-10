@@ -1,0 +1,73 @@
+@use "variables" as v;
+
+.content {
+  
+  &__container {
+    padding: 20px 50px;
+  }
+  &__block-title {
+	position: relative;
+    margin-block-start: 100px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 40%;
+      height: 1px;
+      background-color: v.$color_grey;
+    }
+    &::before {
+      top: -10px;
+      left: 30%;
+    }
+
+    &::after {
+      bottom: -10px;
+      right: 30%;
+    }
+  }
+  &__title {
+	  font: inherit;
+	font-size: 3rem;
+  }
+  &__description {
+  }
+  &__block-text {
+	margin-block-start: 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+  }
+  &__text {
+	line-height: 1.65em;
+  }
+  &__notice {
+  }
+  &__warning {
+  }
+}
+.container {
+}
+.introduction {
+  &__nutshell {
+  }
+  &__title-block {
+  }
+  &__title {
+  }
+  &__title-description {
+  }
+  &__text {
+  }
+}
+.messagebox {
+  &__title {
+  }
+  &__description {
+  }
+}
