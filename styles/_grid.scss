@@ -1,0 +1,23 @@
+
+
+.grid-main-container {
+	display: grid;
+	grid-template-columns: 1fr 3fr; // Две колонки: первая фиксированная, вторая гибкая
+  grid-template-rows: auto; // Одна строка
+  grid-template-areas: 
+    "aside-left header"
+    "aside-left content";
+  block-size: 100%;
+}
+
+.aside-left {
+	grid-area: aside-left;
+}
+
+.header {
+	grid-area: header;
+}
+
+.content {
+	grid-area: content;
+}

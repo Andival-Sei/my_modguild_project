@@ -1,5 +1,10 @@
 @use "variables" as v;
 
+.aside-left {
+	background-color: v.$color_darkBlack;
+}
+
+
 .content {
   
   &__container {
@@ -65,9 +70,32 @@
   &__text {
   }
 }
+
 .messagebox {
+  position: relative;
+  margin: 30px 0;
+  padding: 40px 35px 35px 35px;
+  border: 1px solid v.$color_vividIndigo;
+  border-radius: 10px;
+  line-height: 24px;
   &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 5px 5px;
   }
   &__description {
+  }
+
+  &__notice {
+    color: v.$color_lightLavender;
+    background-color: v.$color_darkIndigo;
+  }
+  &__warning {
+    background-color: v.$color_darkBrown;
+    border: {
+      color: v.$color_gold;
+    }
+    color: v.$color_gold;
   }
 }

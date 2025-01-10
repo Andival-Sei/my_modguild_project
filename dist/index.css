@@ -32,7 +32,26 @@ body {
 
 .container {
   max-inline-size: 1200px;
-  margin: 0 auto;
+}
+
+.grid-main-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+  grid-template-areas: "aside-left header" "aside-left content";
+  block-size: 100%;
+}
+
+.aside-left {
+  grid-area: aside-left;
+}
+
+.header {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
 }
 
 .header {
@@ -40,11 +59,16 @@ body {
   inset: 0;
   padding: 6px 50px;
   border-block-end: 1px solid #000;
+  backdrop-filter: blur(10px);
+  background-color: rgba(27, 27, 31, 0.5);
+  z-index: 10;
 }
 .header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-inline-size: 50%;
+  gap: 500px;
 }
 .header__nav-item-link {
   transition: color 0.3s ease;
@@ -52,11 +76,19 @@ body {
 .header__nav-item-link:hover {
   color: #9499ff;
 }
-
-.header-main {
-  background-color: rgba(27, 27, 31, 0.5);
-  backdrop-filter: blur(10px);
+.header__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+.header__site-name {
+  min-inline-size: 110px;
+}
+.header__menu-list {
+  display: flex;
+  gap: 50px;
+}
+
 .header-main__container {
   margin: 0 auto;
   max-inline-size: 50%;
@@ -80,6 +112,8 @@ body {
   text-align: center;
   background-color: #1b1b1f;
   block-size: 3000px;
+  width: 100vh;
+  margin: 0 auto;
 }
 
 .welcome__content {
@@ -148,6 +182,10 @@ body {
   background: linear-gradient(-45deg, rgb(204, 62, 58) 27%, rgb(221, 31, 31) 69%, rgb(49, 48, 47) 100%);
 }
 
+.aside-left {
+  background-color: #0f0f10;
+}
+
 .content__container {
   padding: 20px 50px;
 }
@@ -186,4 +224,27 @@ body {
 }
 .content__text {
   line-height: 1.65em;
+}
+.messagebox {
+  position: relative;
+  margin: 30px 0;
+  padding: 40px 35px 35px 35px;
+  border: 1px solid #636cff;
+  border-radius: 10px;
+  line-height: 24px;
+}
+.messagebox__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 5px 5px;
+}
+.messagebox__notice {
+  color: #bcc0ea;
+  background-color: #212131;
+}
+.messagebox__warning {
+  background-color: #3c3422;
+  border-color: #f9b440;
+  color: #f9b440;
 }

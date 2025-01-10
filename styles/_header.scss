@@ -5,10 +5,15 @@
   inset: 0;
   padding: 6px 50px;
   border-block-end: 1px solid v.$color_black;
+  backdrop-filter: blur(10px);
+  background-color: v.$color_darkGrey-rgba;
+  z-index: 10;
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-inline-size: 50%;
+    gap: 500px;
   }
 
   &__nav-item-link {
@@ -17,11 +22,24 @@
       color: v.$color_palePurple;
     }
   }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__site-name {
+    min-inline-size: 110px;
+  }
+
+  &__menu-list {
+    display: flex;
+    gap: 50px;
+  }
 }
 
 .header-main {
-  background-color: v.$color_darkGrey-rgba;
-  backdrop-filter: blur(10px);
   &__container {
     margin: 0 auto;
     max-inline-size: 50%;
