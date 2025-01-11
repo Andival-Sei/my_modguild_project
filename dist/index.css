@@ -243,6 +243,33 @@ body {
   margin-block-start: 0.2em;
   position: absolute;
 }
+.content__table-unstyled {
+  margin: 50px 0 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, auto);
+  grid-auto-flow: column;
+}
+.content__table-unstyled-item {
+  text-align: center;
+  margin-block-start: 15px;
+}
+.content__system-specs-table {
+  margin: 50px 0 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, auto);
+  grid-auto-flow: column;
+}
+.content__system-specs-table-item {
+  margin: 15px 30px 0;
+}
+.content__system-specs-table-item:nth-child(-n+6) {
+  text-align: start;
+}
+.content__system-specs-table-item:nth-child(n+7) {
+  text-align: end;
+}
 
 .messagebox {
   position: relative;
