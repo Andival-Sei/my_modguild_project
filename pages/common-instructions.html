@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="../dist/index.css" />
     <link rel="icon" href="../assets/logo_png.ico" type="image/x-icon" />
+    <script type="module" src="/scripts/script.js" defer></script>
     <title>Общие инструкции</title>
   </head>
   <body>
@@ -158,7 +159,7 @@
 
               <table class="content__table-tags">
                 <tbody>
-                  <tr>
+                  <tr class="content__table-tags-row">
                     <th class="content__table-tags-item">
                       <article class="tag tag--cao">
                         <p class="tag__text">CAO</p>
@@ -170,7 +171,7 @@
                       </p>
                     </th>
                   </tr>
-                  <tr>
+                  <tr class="content__table-tags-row">
                     <th class="content__table-tags-item">
                       <article class="tag tag--classic">
                         <p class="tag__text">CLASSIC</p>
@@ -182,7 +183,7 @@
                       </p>
                     </th>
                   </tr>
-                  <tr>
+                  <tr class="content__table-tags-row">
                     <th class="content__table-tags-item">
                       <article class="tag tag--ck-resave">
                         <p class="tag__text">Creatin KIT Resave</p>
@@ -195,7 +196,7 @@
                       </p>
                     </th>
                   </tr>
-                  <tr>
+                  <tr class="content__table-tags-row">
                     <th class="content__table-tags-item">
                       <article class="tag tag--esl">
                         <p class="tag__text">ESL</p>
@@ -208,7 +209,7 @@
                       </p>
                     </th>
                   </tr>
-                  <tr>
+                  <tr class="content__table-tags-row">
                     <th class="content__table-tags-item">
                       <article class="tag tag--extract-bsa">
                         <p class="tag__text">Extract the BSA</p>
@@ -221,7 +222,7 @@
                       </p>
                     </th>
                   </tr>
-                  <tr>
+                  <tr class="content__table-tags-row">
                     <th class="content__table-tags-item">
                       <article class="tag tag--loot">
                         <p class="tag__text">Loot</p>
@@ -234,7 +235,7 @@
                       </p>
                     </th>
                   </tr>
-                  <tr>
+                  <tr class="content__table-tags-row">
                     <th class="content__table-tags-item">
                       <article class="tag tag--removal-tool">
                         <p class="tag__text">MO2 Removal Tool</p>
@@ -247,7 +248,7 @@
                       </p>
                     </th>
                   </tr>
-                  <tr>
+                  <tr class="content__table-tags-row">
                     <th class="content__table-tags-item">
                       <article class="tag tag--tool">
                         <p class="tag__text">Tool</p>
@@ -260,7 +261,7 @@
                       </p>
                     </th>
                   </tr>
-                  <tr>
+                  <tr class="content__table-tags-row">
                     <th class="content__table-tags-item">
                       <article class="tag tag--xedit--quick-auto-clean">
                         <p class="tag__text">xEdit - Quick Auto Clean</p>
@@ -272,7 +273,7 @@
                       </p>
                     </th>
                   </tr>
-                  <tr>
+                  <tr class="content__table-tags-row">
                     <th class="content__table-tags-item">
                       <article class="tag tag--zmerge">
                         <p class="tag__text">zMerge</p>
@@ -285,9 +286,175 @@
                       </p>
                     </th>
                   </tr>
+                  <tr class="content__table-tags-row">
+                    <th class="content__table-tags-item">
+                      <article class="tag tag--special-instructions">
+                        <p class="tag__text">Special Instructions</p>
+                      </article>
+                    </th>
+                    <th class="content__table-tags-item">
+                      <p class="content__text">
+                        Специальные ситуативные инструкции для конкретного мода.
+                      </p>
+                    </th>
+                  </tr>
                 </tbody>
               </table>
             </div>
+          </section>
+
+          <section class="instal-mod">
+            <div class="content__block-title">
+              <h1 class="content__title">Установка мода</h1>
+            </div>
+            <div class="content__block-text">
+              <p class="content__text">
+                При установке руководства следует помнить о нескольких вещах:
+              </p>
+              <ol class="content__text-list">
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    НЕ пытайтесь запустить игру, чтобы «убедиться, что установка
+                    идет хорошо», пока не получите указания. Многие из
+                    устанавливаемых нами файлов зависят от других файлов,
+                    которые могли быть еще не установлены. Доверяйте процессу.
+                    Если в конце концов возникнут проблемы, персонал на сервере
+                    должен быть в состоянии помочь вам либо исправить ошибки,
+                    либо, по крайней мере, связать вас с нужными людьми, чтобы
+                    получить необходимую помощь.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Для вашего собственного здравомыслия, НЕ запускайте LOOT,
+                    пока не дойдете до той части установки, которая находится на
+                    странице «Финишная черта». Вы увидите всевозможные ошибки на
+                    экране пользовательского интерфейса LOOT, и вы полностью
+                    потеряете рассудок. Доверяйте процессу.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    В Руководстве вы найдете несколько мест, где вам
+                    предлагается удалить файлы из мода. Много раз вы увидите эти
+                    имена файлов со знаком "*" в их именах. В качестве примера
+                    вы можете увидеть "helgen reborn.esp\*.tga". В таких случаях
+                    это означает удаление ВСЕХ ФАЙЛОВ, которые соответствуют
+                    этому шаблону (в данном случае, всех файлов с расширением
+                    TGA в этой папке). Эти инструкции будут отображаться в
+                    заголовках «СПЕЦИАЛЬНАЯ ИНСТРУКЦИЯ» под информацией о моде.
+                  </p>
+                </li>
+              </ol>
+
+              <p class="content__text">
+                В зависимости от типа загружаемого файла, вы можете по-разному
+                обращаться с ними при установке в Mod Organizer 2. Приведенные
+                ниже инструкции представляют собой наши рекомендации по решению
+                этой проблемы, которые обеспечивают максимально возможную
+                гибкость и простоту обновления. Кроме того, ниже приведены
+                некоторые советы по процессу установки мода:
+              </p>
+
+              <ol class="content__text-list">
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    После того, как вы установили мод, АКТИВИРУЙТЕ МОД И ЕГО
+                    ФАЙЛЫ в MO2. Будущие установки других модов могут зависеть
+                    от того, будет ли этот мод активен на обеих панелях MO2,
+                    чтобы его установка работала правильно.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    <span class="content__text-highlight"
+                      >ДЛЯ ФАЙЛА, НАЗНАЧЕННОГО В КАЧЕСТВЕ ОСНОВНОГО ФАЙЛА:</span
+                    >
+                    Установите как обычно. Если на странице мода есть несколько
+                    основных файлов, которые вы будете устанавливать, каждый
+                    файл должен быть установлен как отдельный мод (т.е. измените
+                    название мода второго установленного файла), чтобы они
+                    считались двумя разными модами MO2. Это позволяет обновлять
+                    каждый файл независимо от другого, вместо того, чтобы
+                    скачивать и устанавливать все файлы заново, если обновляется
+                    только один из них.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    <span class="content__text-highlight"
+                      >ДЛЯ ФАЙЛА, ОБОЗНАЧЕННОГО КАК ФАЙЛ ОБНОВЛЕНИЯ:</span
+                    >
+                    Эти файлы должны быть установлены в ТОТ ЖЕ СПИСОК МОДОВ, что
+                    и его родительский мод. Это можно сделать, указав MO2
+                    «Объединить» файлы, что сообщит MO2 перезаписать исходную
+                    версию с обновлением, что мы и хотим.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    <span class="content__text-highlight"
+                      >ДЛЯ ФАЙЛА, ОБОЗНАЧЕННОГО КАК НЕОБЯЗАТЕЛЬНЫЙ, ПРОЧИЙ или
+                      СТАРЫЙ ФАЙЛ:</span
+                    >
+                    Эти файлы должны быть установлены как ОТДЕЛЬНЫЙ МОД в MO2.
+                    НЕ ПЕРЕЗАПИСЫВАЙТЕ исходные файлы мода. Это делается по тем
+                    же причинам, что и для основных файлов.
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="fomod-seletions">
+            <div class="content__block-title">
+              <h1 class="content__title">Руководство по выбору FOMOD</h1>
+            </div>
+            <div class="content__block-text">
+              <p class="content__text">
+                На протяжении всего руководства вы установите несколько модов с
+                инструкциями FOMOD.
+              </p>
+              <ol class="content__text-list">
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    <span class="content__text-highlight"
+                      >Выбирайте только</span
+                    >
+                    то, что выбрано в выборе Guide FOMOD.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Некоторые FOMOD автоматически выбирают элементы, которые мы
+                    не хотим устанавливать.
+                    <span class="content__text-highlight">Снимите флажки</span>
+                    со всего, что не выбрано в выборках FOMOD в Руководстве или
+                    не показано в выборах FOMOD в Руководстве.
+                  </p>
+                </li>
+              </ol>
+              <p class="content__text">
+                Будьте очень осторожны с этим выбором - неправильный выбор FOMOD
+                является основной причиной проблем на поздних этапах установки.
+                Если вам нужно пересмотреть свой выбор несколько раз, чтобы
+                убедиться в том, что вы делаете правильный выбор, сделайте это -
+                это сэкономит вам время и нервы в долгосрочной перспективе.
+              </p>
+            </div>
+
+            <h3 class="mod__title content__title-mini">Пример выбора FOMOD</h3>
+            <article class="fomod">
+              <button class="content__text fomod__toggle" onclick="toggleSpoiler()">
+                <span class="content__text-highlight">Инструкция Fomod</span> -
+                Пример Fomod
+              </button>
+              <div class="fomod__content" data-target="fomodContent1">
+                <p class="content__text" id="fomodContent1">
+                  Здесь будет содержимое спойлера.
+                </p>
+              </div>
+            </article>
           </section>
 
           <nav class="content__navigation-buttons">

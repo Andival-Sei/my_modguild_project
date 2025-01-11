@@ -1,5 +1,57 @@
 @use "variables" as v;
 
+
+.mod{
+	&__title {
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fomod {
+	margin: 20px 0 0 0;
+	
+
+	&__toggle {
+    background-color: v.$color_charcoalGray;
+    color: v.$color_white;
+    border: none;
+    padding: 10px 10px 10px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: start;
+    inline-size: 100%;
+    font-size: 16px;
+  }
+
+  &__content {
+    display: none;
+    margin-block-start: 10px;
+    padding: 10px;
+    background-color: v.$color_darkGrey;
+    border-radius: 5px;
+  }
+}
+
+
+
+
 // Теги -------------------------------------
 .tag {
   text-align: center;
@@ -7,8 +59,6 @@
   padding: 5px 10px;
   white-space: nowrap;
   display: inline-block;
-  &__text {
-  }
 
   // Теги по категориям ------------------------
 
@@ -50,5 +100,9 @@
 
   &--zmerge {
     background-color: v.$color_royalPurple;
+  }
+
+  &--special-instructions {
+	background-color: v.$color_magentaPink;
   }
 }

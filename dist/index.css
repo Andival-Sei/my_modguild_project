@@ -214,6 +214,10 @@ body {
   font: inherit;
   font-size: 3rem;
 }
+.content__title-mini {
+  font-family: "Manrope", sans-serif;
+  margin: 30px 0 0 0;
+}
 .content__block-text {
   margin-block-start: 50px;
   display: flex;
@@ -222,12 +226,13 @@ body {
 }
 .content__text {
   line-height: 1.65em;
+  font-weight: normal;
 }
 .content__text-highlight {
   color: #9499ff;
 }
 .content__text-list {
-  margin: 0 0 0 50px;
+  margin: 10px 0 30px 50px;
 }
 .content__text-list-item {
   position: relative;
@@ -240,6 +245,9 @@ body {
   margin-inline-start: -1em;
   margin-block-start: 0.2em;
   position: absolute;
+}
+.content__text-list-ol-item {
+  margin: 10px 0 0 0;
 }
 .content__table-unstyled {
   margin: 50px 0 50px;
@@ -317,16 +325,20 @@ body {
 }
 .content__table-tags {
   inline-size: 100%;
+  border-collapse: collapse;
 }
 .content__table-tags-item {
   padding: 10px;
-  border: 1px solid #353536;
+  border-block-end: 1px solid #a9a9a9;
 }
 .content__table-tags-item:first-child {
-  text-align: left;
+  text-align: start;
 }
 .content__table-tags-item:last-child {
-  text-align: right;
+  text-align: end;
+}
+.content__table-tags-row:last-child .content__table-tags-item {
+  border-block-end: none;
 }
 
 .messagebox {
@@ -350,6 +362,28 @@ body {
   background-color: #3c3422;
   border-color: #f9b440;
   color: #f9b440;
+}
+
+.fomod {
+  margin: 20px 0 0 0;
+}
+.fomod__toggle {
+  background-color: #2f3035;
+  color: #fff;
+  border: none;
+  padding: 10px 10px 10px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: start;
+  inline-size: 100%;
+  font-size: 16px;
+}
+.fomod__content {
+  display: none;
+  margin-block-start: 10px;
+  padding: 10px;
+  background-color: #1b1b1f;
+  border-radius: 5px;
 }
 
 .tag {
@@ -388,4 +422,7 @@ body {
 }
 .tag--zmerge {
   background-color: #831482;
+}
+.tag--special-instructions {
+  background-color: #f724f7;
 }
