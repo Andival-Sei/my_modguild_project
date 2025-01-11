@@ -200,8 +200,8 @@ body {
 .content__block-title::before, .content__block-title::after {
   content: "";
   position: absolute;
-  width: 40%;
-  height: 1px;
+  inline-size: 40%;
+  block-size: 1px;
   background-color: #a9a9a9;
 }
 .content__block-title::before {
@@ -238,9 +238,9 @@ body {
   content: "•";
   color: #9499ff;
   display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-  margin-top: 0.2em;
+  inline-size: 1em;
+  margin-inline-start: -1em;
+  margin-block-start: 0.2em;
   position: absolute;
 }
 
