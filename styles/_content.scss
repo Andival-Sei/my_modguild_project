@@ -6,7 +6,7 @@
 
 .content {
   &__container {
-    padding: 20px 50px;
+    padding: 20px 50px 200px;
   }
   &__block-title {
     position: relative;
@@ -25,21 +25,18 @@
       background-color: v.$color_grey;
     }
     &::before {
-      top: -10px;
-      left: 30%;
+      inset: -10px auto auto 30%;
     }
 
     &::after {
-      bottom: -10px;
-      right: 30%;
+      inset: auto auto -10px 30%;
     }
   }
   &__title {
     font: inherit;
     font-size: 3rem;
   }
-  &__description {
-  }
+
   &__block-text {
     margin-block-start: 50px;
     display: flex;
@@ -53,7 +50,7 @@
       color: v.$color_palePurple;
     }
 
-	&-list {
+    &-list {
       margin: 0 0 0 30px;
       &-item {
         position: relative;
@@ -70,7 +67,6 @@
     }
   }
 
-
   &__table-unstyled {
     margin: 50px 0 50px;
     display: grid;
@@ -80,7 +76,7 @@
 
     &-item {
       text-align: center;
-	  margin-block-start: 15px;
+      margin-block-start: 15px;
     }
   }
 
@@ -100,8 +96,56 @@
       text-align: end;
     }
   }
-}
 
+  &__navigation-buttons {
+    margin-block-start: 100px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -30px 0 0 0; // Отступ сверху для расположения линии над кнопками
+      inline-size: 100%;
+      block-size: 2px;
+      background-color: v.$color_charcoalGray;
+    }
+  }
+  &__navigation-button {
+    background-color: v.$color_charcoalGray;
+    border: 1px solid v.$color_slateGray;
+    border-radius: 8px;
+    inline-size: 300px;
+    block-size: 70px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    &:hover {
+      background-color: #353536;
+    }
+    &:hover:active {
+      background-color: #474747;
+      transform: scale(0.95);
+    }
+
+    &-desc {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 20px;
+    }
+    &-title {
+      line-height: 20px;
+      font-size: 16px;
+      font-weight: 500;
+      color: v.$color_lightBlueViolet;
+    }
+    &-next {
+      text-align: end;
+    }
+  }
+}
 
 .messagebox {
   position: relative;
@@ -112,11 +156,8 @@
   line-height: 24px;
   &__title {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     margin: 5px 5px;
-  }
-  &__description {
   }
 
   &__notice {

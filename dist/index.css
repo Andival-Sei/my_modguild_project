@@ -187,7 +187,7 @@ body {
 }
 
 .content__container {
-  padding: 20px 50px;
+  padding: 20px 50px 200px;
 }
 .content__block-title {
   position: relative;
@@ -205,12 +205,10 @@ body {
   background-color: #a9a9a9;
 }
 .content__block-title::before {
-  top: -10px;
-  left: 30%;
+  inset: -10px auto auto 30%;
 }
 .content__block-title::after {
-  bottom: -10px;
-  right: 30%;
+  inset: auto auto -10px 30%;
 }
 .content__title {
   font: inherit;
@@ -270,6 +268,53 @@ body {
 .content__system-specs-table-item:nth-child(n+7) {
   text-align: end;
 }
+.content__navigation-buttons {
+  margin-block-start: 100px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+.content__navigation-buttons::before {
+  content: "";
+  position: absolute;
+  inset: -30px 0 0 0;
+  inline-size: 100%;
+  block-size: 2px;
+  background-color: #2f3035;
+}
+.content__navigation-button {
+  background-color: #2f3035;
+  border: 1px solid #2e2e32;
+  border-radius: 8px;
+  inline-size: 300px;
+  block-size: 70px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.content__navigation-button:hover {
+  background-color: #353536;
+}
+.content__navigation-button:hover:active {
+  background-color: #474747;
+  transform: scale(0.95);
+}
+.content__navigation-button-desc {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
+.content__navigation-button-title {
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #8e8ff8;
+}
+.content__navigation-button-next {
+  text-align: end;
+}
 
 .messagebox {
   position: relative;
@@ -281,8 +326,7 @@ body {
 }
 .messagebox__title {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   margin: 5px 5px;
 }
 .messagebox__notice {
