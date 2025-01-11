@@ -112,7 +112,7 @@ body {
   text-align: center;
   background-color: #1b1b1f;
   block-size: 3000px;
-  width: 100vh;
+  inline-size: 100vh;
   margin: 0 auto;
 }
 
@@ -227,7 +227,7 @@ body {
   color: #9499ff;
 }
 .content__text-list {
-  margin: 0 0 0 30px;
+  margin: 0 0 0 50px;
 }
 .content__text-list-item {
   position: relative;
@@ -315,6 +315,19 @@ body {
 .content__navigation-button-next {
   text-align: end;
 }
+.content__table-tags {
+  inline-size: 100%;
+}
+.content__table-tags-item {
+  padding: 10px;
+  border: 1px solid #353536;
+}
+.content__table-tags-item:first-child {
+  text-align: left;
+}
+.content__table-tags-item:last-child {
+  text-align: right;
+}
 
 .messagebox {
   position: relative;
@@ -337,4 +350,42 @@ body {
   background-color: #3c3422;
   border-color: #f9b440;
   color: #f9b440;
+}
+
+.tag {
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 10px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.tag--cao {
+  background-color: #2f8a16;
+}
+.tag--classic {
+  background-color: #195c14;
+}
+.tag--ck-resave {
+  background-color: #d21913;
+}
+.tag--esl {
+  background-color: #0808ef;
+}
+.tag--extract-bsa {
+  background-color: #3da19c;
+}
+.tag--loot {
+  background-color: #806056;
+}
+.tag--removal-tool {
+  background-color: #206caf;
+}
+.tag--tool {
+  background-color: #636363;
+}
+.tag--xedit--quick-auto-clean {
+  background-color: #d79a40;
+}
+.tag--zmerge {
+  background-color: #831482;
 }

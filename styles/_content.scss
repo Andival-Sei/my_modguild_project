@@ -51,7 +51,7 @@
     }
 
     &-list {
-      margin: 0 0 0 30px;
+      margin: 0 0 0 50px;
       &-item {
         position: relative;
         &::before {
@@ -143,6 +143,21 @@
     }
     &-next {
       text-align: end;
+    }
+  }
+
+  &__table-tags {
+    inline-size: 100%;
+    &-item {
+      padding: 10px;
+      border: 1px solid #353536;
+      &:first-child {
+        text-align: left;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
     }
   }
 }

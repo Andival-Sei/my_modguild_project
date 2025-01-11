@@ -1,0 +1,54 @@
+@use "variables" as v;
+
+// Теги -------------------------------------
+.tag {
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 10px;
+  white-space: nowrap;
+  display: inline-block;
+  &__text {
+  }
+
+  // Теги по категориям ------------------------
+
+  &--cao {
+    background-color: v.$color_forestGreen;
+  }
+
+  &--classic {
+    background-color: v.$color_darkForestGreen;
+  }
+
+  &--ck-resave {
+    background-color: v.$color_crimsonRed;
+  }
+
+  &--esl {
+    background-color: v.$color_electricBlue;
+  }
+
+  &--extract-bsa {
+    background-color: v.$color_tealGreen;
+  }
+
+  &--loot {
+    background-color: v.$color_roseBrown;
+  }
+
+  &--removal-tool {
+    background-color: v.$color_azureBlue;
+  }
+
+  &--tool {
+    background-color: v.$color_mediumGray;
+  }
+
+  &--xedit--quick-auto-clean {
+    background-color: v.$color_goldenrod;
+  }
+
+  &--zmerge {
+    background-color: v.$color_royalPurple;
+  }
+}
