@@ -1,19 +1,17 @@
 @use "variables" as v;
 
 .aside-left {
-	background-color: v.$color_darkBlack;
+  background-color: v.$color_darkBlack;
 }
 
-
 .content {
-  
   &__container {
     padding: 20px 50px;
   }
   &__block-title {
-	position: relative;
+    position: relative;
     margin-block-start: 100px;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,39 +35,43 @@
     }
   }
   &__title {
-	  font: inherit;
-	font-size: 3rem;
+    font: inherit;
+    font-size: 3rem;
   }
   &__description {
   }
   &__block-text {
-	margin-block-start: 50px;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
+    margin-block-start: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   &__text {
-	line-height: 1.65em;
+    line-height: 1.65em;
+
+    &-highlight {
+      color: v.$color_palePurple;
+    }
+
+	&-list {
+      margin: 0 0 0 30px;
+      &-item {
+        position: relative;
+        &::before {
+          content: "•";
+          color: v.$color_palePurple;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em;
+          margin-top: 0.2em;
+          position: absolute;
+        }
+      }
+    }
   }
-  &__notice {
-  }
-  &__warning {
-  }
+
 }
-.container {
-}
-.introduction {
-  &__nutshell {
-  }
-  &__title-block {
-  }
-  &__title {
-  }
-  &__title-description {
-  }
-  &__text {
-  }
-}
+
 
 .messagebox {
   position: relative;
