@@ -111,7 +111,6 @@ body {
 .main {
   text-align: center;
   background-color: #1b1b1f;
-  block-size: 3000px;
   inline-size: 100vh;
   margin: 0 auto;
 }
@@ -366,7 +365,6 @@ body {
 
 .fomod {
   margin: 20px 0 0 0;
-  overflow: hidden;
 }
 .fomod__toggle {
   background-color: #2f3035;
@@ -388,14 +386,36 @@ body {
 .fomod__content {
   transition: 0.4s;
   margin-block-start: 0;
-  padding: 10px;
+  padding: 20px 50px;
   background-color: #2f3035;
   border-end-start-radius: 5px;
   border-end-end-radius: 5px;
-  max-height: 0;
+  display: none;
+  max-block-size: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  display: none;
+}
+.fomod__page-title {
+  padding-inline-start: 10px;
+  margin-block-end: 5px;
+}
+.fomod__page-content {
+  padding: 20px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+.fomod__section {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+.fomod__section-label {
+  padding: 0 5px;
+}
+.fomod__section-item {
+  margin: 10px 30px;
+  display: flex;
+  gap: 15px;
 }
 
 .tag {

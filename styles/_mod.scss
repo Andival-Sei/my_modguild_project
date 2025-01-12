@@ -7,7 +7,7 @@
 
 .fomod {
   margin: 20px 0 0 0;
-  overflow: hidden;
+  //   overflow: hidden;
 
   &__toggle {
     background-color: v.$color_charcoalGray;
@@ -30,14 +30,42 @@
   &__content {
     transition: 0.4s;
     margin-block-start: 0;
-    padding: 10px;
+    padding: 20px 50px;
     background-color: v.$color_charcoalGray;
     border-end-start-radius: 5px;
     border-end-end-radius: 5px;
-    max-height: 0;
+    display: none;
+    max-block-size: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    display: none;
+  }
+
+  &__page {
+    &-title {
+      padding-inline-start: 10px;
+      margin-block-end: 5px;
+    }
+
+    &-content {
+      padding: 20px;
+      border: 1px solid v.$color_white;
+      border-radius: 10px;
+    }
+  }
+  &__section {
+    border: 1px solid v.$color_white;
+    border-radius: 10px;
+    padding: 10px;
+
+    &-label {
+      padding: 0 5px;
+    }
+
+    &-item {
+      margin: 10px 30px;
+      display: flex;
+      gap: 15px;
+    }
   }
 }
 
