@@ -1,8 +1,7 @@
-var fomodToggle = document.getElementsByClassName("fomod__toggle");
-var i;
+const fomodToggle = document.getElementsByClassName("fomod__toggle");
 
-for (i = 0; i < fomodToggle.length; i++) {
-	fomodToggle[i].addEventListener("click", function() {
+for (const toggle of fomodToggle) {
+	toggle.addEventListener("click", function() {
 		this.classList.toggle("active");
 
 		var panel = this.nextElementSibling;
