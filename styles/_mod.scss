@@ -1,34 +1,14 @@
 @use "variables" as v;
 
-
-.mod{
-	&__title {
-		
-	}
+.mod {
+  &__title {
+  }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .fomod {
-	margin: 20px 0 0 0;
-	
+  margin: 20px 0 0 0;
 
-	&__toggle {
+  &__toggle {
     background-color: v.$color_charcoalGray;
     color: v.$color_white;
     border: none;
@@ -41,16 +21,25 @@
   }
 
   &__content {
-    display: none;
     margin-block-start: 10px;
     padding: 10px;
     background-color: v.$color_darkGrey;
     border-radius: 5px;
+    max-block-size: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+
+  &[open] .fomod__content {
+    max-block-size: 500px; // Установите максимальную высоту, достаточную для содержимого
+    padding: 10px;
+    transition: max-height 0.5s ease-in;
+  }
+
+  &[open] .fomod__toggle {
+    background-color: v.$color_darkSlateGray;
   }
 }
-
-
-
 
 // Теги -------------------------------------
 .tag {
@@ -103,6 +92,6 @@
   }
 
   &--special-instructions {
-	background-color: v.$color_magentaPink;
+    background-color: v.$color_magentaPink;
   }
 }

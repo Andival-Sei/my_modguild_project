@@ -379,11 +379,21 @@ body {
   font-size: 16px;
 }
 .fomod__content {
-  display: none;
   margin-block-start: 10px;
   padding: 10px;
   background-color: #1b1b1f;
   border-radius: 5px;
+  max-block-size: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+.fomod[open] .fomod__content {
+  max-block-size: 500px;
+  padding: 10px;
+  transition: max-height 0.5s ease-in;
+}
+.fomod[open] .fomod__toggle {
+  background-color: #353536;
 }
 
 .tag {
