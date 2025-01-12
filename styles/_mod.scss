@@ -7,6 +7,7 @@
 
 .fomod {
   margin: 20px 0 0 0;
+  overflow: hidden;
 
   &__toggle {
     background-color: v.$color_charcoalGray;
@@ -18,27 +19,25 @@
     text-align: start;
     inline-size: 100%;
     font-size: 16px;
+	transition: 0.4s;
   }
 
   &__content {
-    margin-block-start: 10px;
+    margin-block-start: 0;
     padding: 10px;
-    background-color: v.$color_darkGrey;
-    border-radius: 5px;
-    max-block-size: 0;
+    background-color: v.$color_charcoalGray;
+    border-end-start-radius: 5px;
+    border-end-end-radius: 5px;
+    max-height: 0;
+	display: none;
     overflow: hidden;
-    transition: max-height 0.5s ease-out;
+	transition: max-height 0.2s ease-out;
   }
 
-  &[open] .fomod__content {
-    max-block-size: 500px; // Установите максимальную высоту, достаточную для содержимого
-    padding: 10px;
-    transition: max-height 0.5s ease-in;
-  }
 
-  &[open] .fomod__toggle {
-    background-color: v.$color_darkSlateGray;
-  }
+//     background-color: v.$color_darkSlateGray;
+//     border-end-start-radius: 0;
+//     border-end-end-radius: 0;
 }
 
 // Теги -------------------------------------
