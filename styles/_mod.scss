@@ -19,25 +19,26 @@
     text-align: start;
     inline-size: 100%;
     font-size: 16px;
-	transition: 0.4s;
+    transition: 0.4s;
+    &.active {
+      border-end-start-radius: 0;
+      border-end-end-radius: 0;
+      background-color: v.$color_darkSlateGray;
+    }
   }
 
   &__content {
+    transition: 0.4s;
     margin-block-start: 0;
     padding: 10px;
     background-color: v.$color_charcoalGray;
     border-end-start-radius: 5px;
     border-end-end-radius: 5px;
     max-height: 0;
-	display: none;
     overflow: hidden;
-	transition: max-height 0.2s ease-out;
+    transition: max-height 0.2s ease-out;
+    display: none;
   }
-
-
-//     background-color: v.$color_darkSlateGray;
-//     border-end-start-radius: 0;
-//     border-end-end-radius: 0;
 }
 
 // Теги -------------------------------------
