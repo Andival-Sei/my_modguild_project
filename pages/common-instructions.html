@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="../dist/index.css" />
     <link rel="icon" href="../assets/logo_png.ico" type="image/x-icon" />
-    <script type="module" src="/scripts/script.js" defer></script>
+    <script src="/scripts/script.js" defer></script>
     <title>Общие инструкции</title>
   </head>
   <body>
@@ -445,12 +445,12 @@
 
             <h3 class="mod__title content__title-mini">Пример выбора FOMOD</h3>
             <article class="fomod">
-              <button class="content__text fomod__toggle" onclick="toggleSpoiler()">
+              <p class="fomod__text fomod__toggle">
                 <span class="content__text-highlight">Инструкция Fomod</span> -
                 Пример Fomod
-              </button>
-              <div class="fomod__content" data-target="fomodContent1">
-                <p class="content__text" id="fomodContent1">
+              </p>
+              <div class="fomod__content">
+                <p class="fomod__text">
                   Здесь будет содержимое спойлера.
                 </p>
               </div>
