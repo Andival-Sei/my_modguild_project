@@ -34,10 +34,17 @@
     background-color: v.$color_charcoalGray;
     border-end-start-radius: 5px;
     border-end-end-radius: 5px;
-    display: none;
-    max-block-size: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+
+    &.open {
+      opacity: 1;
+      pointer-events: auto;
+      max-height: 9999px;
+    }
   }
 
   &__page {
