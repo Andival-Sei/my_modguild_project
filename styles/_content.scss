@@ -58,8 +58,13 @@
       color: v.$color_palePurple;
     }
 
+	&-underline {
+		text-decoration: underline;
+		text-underline-offset: 5px;
+	}
+
     &-list {
-      margin: 10px 0 30px 50px;
+      margin: 10px 0 20px 50px;
       &-item {
         position: relative;
         &::before {

@@ -499,6 +499,533 @@
             </article>
           </section>
 
+          <section class="extract-bsa">
+            <div class="content__block-title">
+              <h1 class="content__title">Извлечение файлов BSA</h1>
+            </div>
+
+            <div class="content__block-text">
+              <p class="content__text">
+                Файл Bethesda Softworks Archive (BSA) — это тип файла сжатия
+                (аналогичный ZIP, 7ZIP или аналогичному файлу), который Skyrim
+                использует для хранения ресурсов, используемых файлом плагина.
+                Обычно это включает в себя такие вещи, как файлы текстур,
+                звуковые файлы, скрипты и другие подобные ресурсы. В большинстве
+                случаев, если автор модификаций (MA) упаковывает свои активы в
+                BSA, мы оставляем его в покое и позволяем ему работать так, как
+                он был задуман.
+              </p>
+              <p class="content__text">
+                Для целей текущего руководства мы будем извлекать файлы BSA в
+                нескольких случаях:
+              </p>
+              <ol class="content__text-list">
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    BSA поставляется с файлом плагина "Dummy". Это означает, что
+                    в файле плагина нет фактических записей, и что файл плагина
+                    существует только для того, чтобы BSA был прочитан игрой. В
+                    этом нет никакой необходимости, поэтому в этой ситуации мы
+                    извлечем BSA и удалим плагин.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Мы будем использовать плагин как часть Merge, что лишит файл
+                    плагина возможности считывать этот BSA, что означает, что
+                    активы останутся неиспользованными.
+                  </p>
+                </li>
+              </ol>
+              <p class="content__text">
+                Для этого мы будем использовать плагин BSA Extractor, который
+                входит в состав Mod Organizer 2. Есть два способа добиться
+                этого.
+              </p>
+              <p class="content__text">
+                <span class="content__text-highlight content__text-underline"
+                  >Вариант 1: Обычный, автомагический способ</span
+                >
+              </p>
+              <p class="content__text">
+                Плагин включен по умолчанию, но мы хотим изменить одну из
+                настроек плагина, выполнив следующие действия:
+              </p>
+
+              <ol class="content__text-list">
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Нажмите на значок «гаечный ключ и отвертка» в левом верхнем
+                    углу MO2.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">Перейдите на вкладку Плагины.</p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Найдите и выберите плагин BSA Extractor.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    С правой стороны убедитесь, что для параметра
+                    <span class="content__text-highlight"
+                      >only_alternate_source</span
+                    >
+                    установлено значение false.
+                  </p>
+                </li>
+              </ol>
+
+              <p class="content__text">
+                Каждый раз, когда устанавливается мод, содержащий файл BSA,
+                появляется запрос с вопросом, хотите ли вы извлечь файл BSA.
+                Есть три варианта -
+                <span class="content__text-highlight"
+                  >будьте внимательны, какую кнопку вы нажимаете</span
+                >. Для модов, которые вы хотите извлечь (помечены значком
+                тегом),
+                <span class="content__text-highlight">ВЫБЕРИТЕ ДА</span>. Будьте
+                осторожны и не отключите подсказку! Если вы это сделаете, вы
+                можете снова включить их на вкладке «Общие» в разделе
+                «Настройки», нажав кнопку «Сбросить выбор диалогового окна».
+              </p>
+              <p class="content__text">
+                Запрос BSA Extractor также спросит, хотите ли вы удалить BSA
+                после извлечения - выберите Да для этого тоже.
+              </p>
+              <p class="content__text">
+                Для всех остальных модов
+                <span class="content__text-highlight">ВЫБЕРИТЕ НЕТ</span>.
+              </p>
+              <p class="content__text">
+                На этом этапе вы получите уведомление во время установки для
+                любого мода, который включает BSA, с вопросом, хотите ли вы
+                извлечь его. Если в инструкциях указано, что это необходимо,
+                нажмите «Да»; в противном случае нажмите кнопку Нет. В последней
+                версии MO2 экстрактор BSA также спросит, хотите ли вы удалить
+                BSA после его извлечения. Скажите «да».
+              </p>
+              <p class="content__text">
+                <span class="content__text-highlight content__text-underline"
+                  >Вариант 2: Ручной способ</span
+                >
+              </p>
+              <p class="content__text">
+                Если вы случайно отключили приглашение или по какой-то другой
+                причине поняли, что не извлекли нужный BSA, вы можете сделать
+                это вручную.
+              </p>
+
+              <ol class="content__text-list">
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Выберите вкладку «Архив» на правой панели MO2.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Прокрутите список архивов BSA (они перечислены вместе с
+                    файлом плагина, с которым они связаны).
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Как только вы найдете файл, который хотите извлечь,
+                    <span class="content__text-highlight"
+                      >щелкните правой кнопкой</span
+                    >
+                    мыши имя файла и выберите
+                    <span class="content__text-highlight">ИЗВЛЕЧЬ</span>.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Вам будет предложено указать место извлечения. Найдите
+                    папку, которая совпадает с названием мода, с которым связана
+                    BSA.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Файлы будут извлечены, но BSA-файл все еще будет
+                    присутствовать. Его можно удалить из своего местоположения с
+                    помощью обычных методов проводника.
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="converting-old-plugins">
+            <div class="content__block-title">
+              <h1 class="content__title">Конвертация старых плагинов</h1>
+              <p class="content__description">
+                Работа со «старыми, но хорошими»
+              </p>
+            </div>
+
+            <div class="content__block-text">
+              <p class="content__text">
+                В оригинальной версии Skyrim (Skyrim: LE) использовалась немного
+                другая версия файлов плагина, чем в Skyrim: SE (Form 43 vs. Form
+                44). Поскольку в руководстве используется ряд модов, которые
+                изначально были разработаны и выпущены для Skyrim: LE, плагины
+                будут в этой старой форме. Хотя эти файлы обычно не вызывают
+                проблем, это очень простой процесс, чтобы конвертировать старый
+                формат в более новый и убедиться в этом.
+              </p>
+              <p class="content__text">
+                Для выполнения этого преобразования мы будем использовать
+                Creation Kit. Все моды, требующие этого преобразования, будут
+                иметь тег Creatin Kit Resave.
+              </p>
+
+              <p class="content__text">
+                <span class="content__text-highlight content__text-underline"
+                  >1. Конвертируем плагин с помощью Creation Kit</span
+                >
+              </p>
+
+              <ol class="content__text-list">
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Убедитесь, что папка Overwrite пуста. Он всегда будет указан
+                    последним на левой панели MO2. Если какие-либо файлы
+                    присутствуют, их можно удалить.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    В раскрывающемся меню «Исполняемый файл» MO2 выберите и
+                    запустите Creation Kit.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    После загрузки откройте меню
+                    <span class="content__text-highlight">«Файл»</span> и
+                    выберите
+                    <span class="content__text-highlight">«Данные...»</span>
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Найдите файл плагина, который нужно конвертировать, и
+                    выберите
+                    <span class="content__text-highlight"
+                      >«Установить как активный файл»</span
+                    >.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Нажмите OK и дождитесь завершения загрузки Creation Kit.
+                  </p>
+                  <ul class="content__text-list">
+                    <li class="content__text-list-item">
+                      <p class="content__text">
+                        В окне в фоновом режиме будут отображаться
+                        многочисленные ошибки. Это нормально и их можно
+                        игнорировать. Они никак не повлияют на этот процесс.
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    После завершения процесса загрузки выберите
+                    <span class="content__text-highlight">«Файл»</span>, а затем
+                    <span class="content__text-highlight">«Сохранить»</span>.
+                  </p>
+                  <ul class="content__text-list">
+                    <li class="content__text-list-item">
+                      <p class="content__text">
+                        Вы правильно прочитали. Как только он загрузится,
+                        СОХРАНИТЕ ЕГО. Это буквально все, что нам нужно сделать
+                        для конвертации плагина.
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">Закройте набор для создания.</p>
+                </li>
+              </ol>
+              <p class="content__text">
+                Обновленная версия плагина должна была перезаписывать старую
+                версию. Для преобразования не требуется никаких дополнительных
+                действий. Были редкие сообщения о том, что процесс не сработал,
+                но проверить процесс конвертации можно с помощью:
+              </p>
+              <p class="content__text">
+                <span class="content__text-highlight content__text-underline"
+                  >2. Проверка плагина с помощью SSEEdit</span
+                >
+              </p>
+
+              <ol class="content__text-list">
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    В раскрывающемся меню «Исполняемый файл» MO2 выберите и
+                    запустите xEdit.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Когда начальная загрузка будет завершена,
+                    <span class="content__text-highlight"
+                      >щелкните правой кнопкой мыши</span
+                    >
+                    в окне со списком плагинов и выберите
+                    <span class="content__text-highlight">«Выбрать нет»</span>.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Найдите преобразованный плагин в списке и
+                    <span class="content__text-highlight">ДВАЖДЫ КЛИКНИТЕ</span>
+                    по нему. xEdit должен начать загрузку снова. Найдите
+                    сообщение "Background Loader: finished", указывающее на
+                    завершение загрузки.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Убедитесь, что последний плагин на левой панели — это тот,
+                    который вы проверяете.
+                    <span class="content__text-highlight"
+                      >ЩЕЛКНИТЕ ПРАВОЙ КНОПКОЙ МЫШИ</span
+                    >
+                    этот плагин и выберите
+                    <span class="content__text-highlight"
+                      >«Проверить на наличие ошибок»</span
+                    >.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Должно появиться сообщение «Все готово!». Это говорит о
+                    чистом плагине, который будет работать.
+                  </p>
+                  <ul class="content__text-list">
+                    <li class="content__text-list-item">
+                      <p class="content__text">
+                        Если об ошибках сообщается, вам нужно будет либо
+                        исправить их, либо попробовать конвертацию плагина
+                        второй раз, прежде чем переходить к следующему шагу.
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    <span class="content__text-highlight"
+                      >ЩЕЛКНИТЕ ПРАВОЙ КНОПКОЙ МЫШИ</span
+                    >
+                    ПО ПЛАГИНУ еще раз и выберите
+                    <span class="content__text-highlight"
+                      >«Сортировать мастера»</span
+                    >.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Выйдите из xEDIT. Обязательно сохраните измененный плагин.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Запустите плагин через xEdit Quick Auto Clean.
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="cathedral-optimizer">
+            <div class="content__block-title">
+              <h1 class="content__title">Cathedral Assets Optimizer</h1>
+              <p class="content__description">Как правильно доить САО</p>
+            </div>
+
+            <div class="content__block-text">
+              <p class="content__text">
+                Последняя общая задача, которая появится в руководстве для
+                работы, — это запуск мода через Cathedral Asset Optimizer (CAO).
+                Как упоминалось в разделе «Конвертация плагинов», некоторые из
+                модов, которые мы используем, взяты из Skyrim: LE, а сетки и
+                текстуры, которые с ними связаны, не всегда хорошо сочетаются со
+                Skyrim: SE. Чтобы ваша игровая система не взорвалась, было
+                создано несколько различных профилей:
+              </p>
+
+              <ul class="content__text-list">
+                <li class="content__text-list-item">
+                  <p class="content__text">
+                    Lexy's LOTD SE - BSA: Оптимизирует сетки и текстуры, а затем
+                    упаковывает их в BSA.
+                  </p>
+                </li>
+                <li class="content__text-list-item">
+                  <p class="content__text">
+                    Lexy's LOTD SE - No BSA: Оптимизирует сетки и текстуры, но
+                    оставляет их в виде свободных файлов.
+                  </p>
+                </li>
+                <li class="content__text-list-item">
+                  <p class="content__text">
+                    Lexy's LOTD SE - WICO: Специально настроен для оптимизации
+                    сеток и текстур для WICO - Windsong Immersive Character
+                    Overhaul, следуя специальным инструкциям руководства для
+                    него.
+                  </p>
+                </li>
+                <li class="content__text-list-item">
+                  <p class="content__text">
+                    SSE - Уменьшить размер текстур - 1K: Уменьшает размер любой
+                    текстуры размером более 1024 x 1024 до 1K. Если вы
+                    попытаетесь сохранить немного видеопамяти, не стесняйтесь
+                    использовать этот профиль для уменьшения некоторых текстур
+                    там, где вы считаете это целесообразным.
+                  </p>
+                </li>
+                <li class="content__text-list-item">
+                  <p class="content__text">
+                    SSE - Уменьшить размер текстур - 2K: Уменьшает любую
+                    текстуру, размер которой превышает 2048 x 2048, до 2K. Если
+                    вы попытаетесь сохранить немного видеопамяти, не стесняйтесь
+                    использовать этот профиль для уменьшения некоторых текстур
+                    там, где вы считаете это целесообразным.
+                  </p>
+                </li>
+              </ul>
+
+              <p class="content__text">
+                Моды, требующие такой обработки, будут иметь тег CAO вместе с
+                тем, какой профиль вам следует использовать.
+              </p>
+
+              <ol class="content__text-list">
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    ЗАКРОЙТЕ MO2. CAO предназначен для работы ВНЕ Mod Organizer.
+                    Не стоит его минимизировать; ЗАКРОЙТЕ ЕГО.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Запустите CAO из исполняемого файла в папке установки.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Посмотрите на мод Особые указания. В нем будет указан тип
+                    профиля для использования в CAO. Убедитесь, что вы
+                    используете правильный профиль.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Нажмите на кнопку
+                    <span class="content__text-highlight"
+                      >«Открыть каталог»</span
+                    >. Перейдите в папку с модом, который требует конвертации.
+                    Выберите эту папку.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Нажмите на кнопку
+                    <span class="content__text-highlight">«Журнал»</span>. Это
+                    покажет вам, что будет обрабатывать CAO.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    <span class="content__text-highlight"
+                      >Нажмите кнопку Выполнить.</span
+                    >
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Когда CAO завершит свой прогон, закройте программу.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Повторите шаги 2 - 7 для всех загруженных файлов для этого
+                    мода (основных, необязательных и прочих).
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="mo2-removal-tool">
+            <div class="content__block-title">
+              <h1 class="content__title">Mod Organizer 2 Removal Tool</h1>
+              <p class="content__description">Вынос мусора</p>
+            </div>
+
+            <div class="content__block-text">
+              <p class="content__text">
+                Последняя общая задача, которая появится в Руководстве для
+                работы, — это запуск мода через Mod Organizer Removal Tool.
+                Инструмент упрощает удаление файлов из модов.
+              </p>
+              <p class="content__text">
+                Моды, требующие такой обработки, будут иметь соответствующий
+                тег.
+              </p>
+
+              <ol class="content__text-list">
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Выберите опцию "MO2 Removal Tool" в меню инструментов на панели инструментов MO2 (значок головоломки).
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Посмотрите на мод Особые указания. В нем будут перечислены все файлы, которые необходимо удалить.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Введите название мода, из которого вы хотите удалить файлы/папки (последний мод в вашем списке модов выбран по умолчанию).
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Скопируйте и вставьте контуры в поле под селектором мода.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Нажмите кнопку Выполнить. Откроется еще одно диалоговое окно.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Просмотрите файлы, которые будут удалены. Все пути с подстановочными знаками будут развернуты, чтобы показать, какие файлы были выбраны.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    Нажмите «Удалить все», чтобы завершить удаление. Обратите внимание, что вы также можете инвертировать выбор, чтобы удалить все, КРОМЕ того, что вы изначально ввели. ЭТО ЭКСПЕРИМЕНТАЛЬНО. Помните, что вы НЕ МОЖЕТЕ отменить удаление из этого инструмента, я лично рекомендую использовать опцию "mohidden" при использовании этой функции.
+                  </p>
+                </li>
+                <li class="content__text-list-ol-item">
+                  <p class="content__text">
+                    В корневой папке мода будет создан файл для регистрации сделанных вами удалений. Файл будет называться {modName}. {'удалить'|' mohidden'}.log
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </section>
+
           <nav class="content__navigation-buttons">
             <a
               href="./introduction.html"

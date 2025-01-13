@@ -230,8 +230,12 @@ body {
 .content__text-highlight {
   color: #9499ff;
 }
+.content__text-underline {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
 .content__text-list {
-  margin: 10px 0 30px 50px;
+  margin: 10px 0 20px 50px;
 }
 .content__text-list-item {
   position: relative;
@@ -384,7 +388,6 @@ body {
   background-color: #353536;
 }
 .fomod__content {
-  transition: 0.4s;
   margin-block-start: 0;
   padding: 20px 50px;
   background-color: #2f3035;
@@ -400,6 +403,7 @@ body {
   opacity: 1;
   pointer-events: auto;
   max-height: 9999px;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 .fomod__page-title {
   padding-inline-start: 10px;
