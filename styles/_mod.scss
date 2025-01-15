@@ -157,7 +157,7 @@
 
   &__page {
     flex: 0 0 100%;
-    transition: transform 0.5s ease, visibility 0.5s ease;
+    transition: transform 0.5s ease;
 
     &:not(.fomod__page-active) {
       visibility: hidden;
