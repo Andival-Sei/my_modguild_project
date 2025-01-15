@@ -2,7 +2,7 @@
 
 .mod {
   margin-top: 100px;
-  background-color: v.$color_charcoalGray;
+  background-color: v.$color_dark_charcoal; // Заменённый цвет вместо #272626
   border-radius: 10px;
   padding: 30px;
   display: flex;
@@ -148,7 +148,7 @@
     &.open {
       opacity: 1;
       pointer-events: auto;
-      max-block-size: 9999px;
+      max-block-size: 1000px;
       transition: max-height 0.4s ease, opacity 0.4s ease;
     }
   }

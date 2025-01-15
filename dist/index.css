@@ -369,7 +369,7 @@ body {
 
 .mod {
   margin-top: 100px;
-  background-color: #2f3035;
+  background-color: #272626;
   border-radius: 10px;
   padding: 30px;
   display: flex;
@@ -490,7 +490,7 @@ body {
 .fomod__content.open {
   opacity: 1;
   pointer-events: auto;
-  max-block-size: 9999px;
+  max-block-size: 1000px;
   transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 .fomod__page-title {
