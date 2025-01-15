@@ -74,7 +74,6 @@
       color: v.$color_grey;
       margin-left: 30px;
       padding: 0 10px; // Добавляем внутренний отступ слева
-      
     }
 
     &-item {
@@ -84,7 +83,7 @@
 
       // Добавляем псевдоэлементы ::before для вставки тире перед элементами, кроме первого
       span:not(:first-child)::before {
-        content: '— '; // Вставляем тире перед каждым элементом, кроме первого
+        content: "— "; // Вставляем тире перед каждым элементом, кроме первого
         color: v.$color_grey; // Цвет тире
         margin-right: 10px; // Отступ справа от тире
       }
@@ -95,7 +94,7 @@
 
       &-version-label {
         font-style: italic; // Делает текст курсивом
-        margin-right: 5px;   // Добавляет отступ справа
+        margin-right: 5px; // Добавляет отступ справа
       }
 
       &-highlight-main {
@@ -113,7 +112,7 @@
 
 .fomod {
   margin: 20px 0 0 0;
-    // overflow: hidden;
+  // overflow: hidden;
 
   &__toggle {
     background-color: v.$color_charcoalGray;
@@ -135,27 +134,36 @@
 
   &__content {
     margin-block-start: 0;
-    padding: 20px 50px;
+    padding: 0;
     background-color: v.$color_charcoalGray;
     border-end-start-radius: 5px;
     border-end-end-radius: 5px;
     overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
     opacity: 0;
     pointer-events: none;
     max-block-size: 0;
-    position: absolute;
+    // position: absolute;
 
     &.open {
+      padding: 20px 50px;
       opacity: 1;
       pointer-events: auto;
       max-block-size: 1000px;
-      transition: max-height 0.4s ease, opacity 0.4s ease;
+      transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
       position: relative;
     }
   }
 
   &__page {
+    flex: 0 0 100%;
+    transition: transform 0.5s ease;
+
+    &:not(.fomod__page-active) {
+      visibility: hidden;
+      position: absolute;
+    }
+
     &-title {
       padding-inline-start: 10px;
       margin-block-end: 5px;
@@ -181,6 +189,52 @@
       display: flex;
       gap: 15px;
     }
+  }
+}
+
+.gallery {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  inline-size: 100%;
+
+  &__prev,
+  &__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  &__prev {
+    left: 10px;
+  }
+
+  &__next {
+    right: 10px;
+  }
+
+  &__indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  &__indicator {
+    width: 10px;
+    height: 10px;
+    background-color: lightgray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  &__indicator-active {
+    background-color: v.$color_palePurple;
   }
 }
 
