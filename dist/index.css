@@ -497,32 +497,6 @@ body {
 }
 .fomod__page {
   flex: 0 0 100%;
-  transition: transform 0.5s ease;
-}
-.fomod__page-active {
-  visibility: visible;
-  position: relative;
-  transform: translateX(0);
-}
-.fomod__page-next {
-  visibility: visible;
-  position: relative;
-  transform: translateX(100%);
-}
-.fomod__page-prev {
-  visibility: visible;
-  position: relative;
-  transform: translateX(-100%);
-}
-.fomod__page-hidden {
-  visibility: hidden;
-  position: absolute;
-  transform: translateX(0);
-}
-.fomod__page:not(.fomod__page-active):not(.fomod__page-next):not(.fomod__page-prev) {
-  visibility: hidden;
-  position: absolute;
-  transform: translateX(0);
 }
 .fomod__page-title {
   padding-inline-start: 10px;
@@ -546,22 +520,20 @@ body {
   display: flex;
   gap: 15px;
 }
-
-.gallery {
+.fomod__slider {
   display: flex;
   overflow: hidden;
   position: relative;
   inline-size: 100%;
 }
-.gallery__prev, .gallery__next {
+.fomod__slider-prev, .fomod__slider-next {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0);
   color: white;
   border: none;
   cursor: pointer;
-  z-index: 10;
+  z-index: 3;
   content: "";
   display: inline-block;
   width: 15px;
@@ -570,20 +542,20 @@ body {
   border-width: 2px 2px 0 0;
   transform: rotate(-135deg);
 }
-.gallery__prev {
+.fomod__slider-prev {
   left: 15px;
   transform: rotate(-135deg);
 }
-.gallery__next {
+.fomod__slider-next {
   right: 15px;
   transform: rotate(45deg);
 }
-.gallery__indicators {
+.fomod__slider-indicators {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
-.gallery__indicator {
+.fomod__slider-indicator {
   width: 10px;
   height: 10px;
   background-color: lightgray;
@@ -592,9 +564,14 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
-.gallery__indicator-active {
+.fomod__slider-indicator-active {
   background-color: #9499ff;
   transform: scale(1.4);
+}
+.fomod__slide-active {
+  visibility: visible;
+  position: relative;
+  transform: translateX(0);
 }
 
 .tag {

@@ -157,37 +157,18 @@
 
   &__page {
     flex: 0 0 100%;
-    transition: transform 0.5s ease; //, visibility 0.5s ease Удалил пока что.
 
-    &-active {
-      visibility: visible;
-      position: relative;
-      transform: translateX(0);
-    }
+    // &-hidden {
+    //   visibility: hidden;
+    //   position: absolute;
+    //   transform: translateX(0);
+    // }
 
-    &-next {
-      visibility: visible;
-      position: relative;
-      transform: translateX(100%);
-    }
-
-    &-prev {
-      visibility: visible;
-      position: relative;
-      transform: translateX(-100%);
-    }
-
-    &-hidden {
-      visibility: hidden;
-      position: absolute;
-      transform: translateX(0);
-    }
-
-    &:not(.fomod__page-active):not(.fomod__page-next):not(.fomod__page-prev) {
-      visibility: hidden;
-      position: absolute;
-      transform: translateX(0);
-    }
+    // &:not(.fomod__page-active):not(.fomod__page-next):not(.fomod__page-prev) {
+    //   visibility: hidden;
+    //   position: absolute;
+    //   transform: translateX(0);
+    // }
 
     &-title {
       padding-inline-start: 10px;
@@ -215,63 +196,69 @@
       gap: 15px;
     }
   }
-}
 
-.gallery {
-  display: flex;
-  overflow: hidden;
-  position: relative;
-  inline-size: 100%;
-
-  &__prev,
-  &__next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-    border: none;
-    cursor: pointer;
-    z-index: 10;
-
-    content: "";
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border: solid #ffffff;
-    border-width: 2px 2px 0 0;
-    transform: rotate(-135deg);
-  }
-
-  &__prev {
-    left: 15px;
-    transform: rotate(-135deg);
-  }
-
-  &__next {
-    right: 15px;
-    transform: rotate(45deg);
-  }
-
-  &__indicators {
+  &__slider {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+    inline-size: 100%;
+
+    &-prev,
+    &-next {
+      position: absolute;
+      top: 50%;
+      background-color: rgba(0, 0, 0, 0);
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 3;
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border: solid #ffffff;
+      border-width: 2px 2px 0 0;
+      transform: rotate(-135deg);
+    }
+
+    &-prev {
+      left: 15px;
+      transform: rotate(-135deg);
+    }
+
+    &-next {
+      right: 15px;
+      transform: rotate(45deg);
+    }
+
+    &-indicators {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    &-indicator {
+      width: 10px;
+      height: 10px;
+      background-color: lightgray;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    &-indicator-active {
+      background-color: v.$color_palePurple;
+      transform: scale(1.4);
+    }
   }
 
-  &__indicator {
-    width: 10px;
-    height: 10px;
-    background-color: lightgray;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-
-  &__indicator-active {
-    background-color: v.$color_palePurple;
-    transform: scale(1.4);
+  &__slide {
+    &-active {
+      visibility: visible;
+      position: relative;
+      transform: translateX(0);
+    }
   }
 }
 
