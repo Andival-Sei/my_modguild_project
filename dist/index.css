@@ -367,6 +367,94 @@ body {
   color: #f9b440;
 }
 
+.mod {
+  margin-top: 100px;
+  background-color: #2f3035;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.mod__title {
+  font-size: 20px;
+}
+.mod__info {
+  display: inline-flex; /* Чтобы блок не растягивался */
+  align-items: stretch;
+  border: 1px solid #a9a9a9;
+  border-radius: 5px;
+  padding: 0;
+  align-self: flex-start;
+  width: auto;
+  overflow: hidden;
+}
+.mod__info-download, .mod__info-version, .mod__info-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  border-right: 1px solid #a9a9a9;
+}
+.mod__info-download:last-child, .mod__info-version:last-child, .mod__info-author:last-child {
+  border-right: none;
+}
+.mod__info-download {
+  background-color: #2a5242;
+  transition: background-color 0.3s;
+}
+.mod__info-download:hover {
+  background-color: #3b6e5b;
+}
+.mod__info-version, .mod__info-author {
+  background-color: #2a3e52;
+}
+.mod__info-version-label, .mod__info-author-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #f9b440;
+}
+.mod__hr {
+  border-color: #a9a9a9;
+}
+.mod__files {
+  padding: 20px;
+  border: 1px solid #a9a9a9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mod__files-legend {
+  color: #a9a9a9;
+  margin-left: 30px;
+  padding: 0 10px;
+}
+.mod__files-item span {
+  margin: 0 10px;
+}
+.mod__files-item span:not(:first-child)::before {
+  content: "— ";
+  color: #a9a9a9;
+  margin-right: 10px;
+}
+.mod__files-item-version {
+  font-style: italic;
+}
+.mod__files-item-version-label {
+  font-style: italic;
+  margin-right: 5px;
+}
+.mod__files-item-highlight-main {
+  color: #9499ff;
+}
+.mod__files-item-highlight-update {
+  color: #32a5a0;
+}
+
 .fomod {
   margin: 20px 0 0 0;
 }
@@ -397,12 +485,12 @@ body {
   transition: max-height 0.4s ease, opacity 0.4s ease;
   opacity: 0;
   pointer-events: none;
-  max-height: 0;
+  max-block-size: 0;
 }
 .fomod__content.open {
   opacity: 1;
   pointer-events: auto;
-  max-height: 9999px;
+  max-block-size: 9999px;
   transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 .fomod__page-title {

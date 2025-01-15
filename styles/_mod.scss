@@ -1,11 +1,113 @@
 @use "variables" as v;
 
 .mod {
-	
+  margin-top: 100px;
+  background-color: v.$color_charcoalGray;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   &__title {
+    font-size: 20px;
+  }
+  &__info {
+    display: inline-flex; /* Чтобы блок не растягивался */
+    align-items: stretch;
+    border: 1px solid v.$color_grey;
+    border-radius: 5px;
+    padding: 0;
+    align-self: flex-start; // чтобы блок не растягивался по ширине
+    width: auto; // ширина по содержимому
+    overflow: hidden; // чтобы фон не вылезал за скруглённые углы
+
+    &-download,
+    &-version,
+    &-author {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      color: v.$color_white;
+      text-decoration: none;
+      border-right: 1px solid v.$color_grey;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    &-download {
+      background-color: v.$color_download-default;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: v.$color_download-hover;
+      }
+    }
+
+    &-version,
+    &-author {
+      background-color: v.$color_version-author-default;
+    }
+
+    &-version-label,
+    &-author-label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: v.$color_gold;
+    }
+  }
+
+  &__hr {
+    border-color: v.$color_grey;
+  }
+
+  &__files {
+    padding: 20px;
+    border: 1px solid v.$color_grey; // Изменяем цвет границы на серый
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &-legend {
+      color: v.$color_grey;
+      margin-left: 30px;
+      padding: 0 10px; // Добавляем внутренний отступ слева
+      
+    }
+
+    &-item {
+      span {
+        margin: 0 10px; // Увеличиваем горизонтальные отступы между элементами
+      }
+
+      // Добавляем псевдоэлементы ::before для вставки тире перед элементами, кроме первого
+      span:not(:first-child)::before {
+        content: '— '; // Вставляем тире перед каждым элементом, кроме первого
+        color: v.$color_grey; // Цвет тире
+        margin-right: 10px; // Отступ справа от тире
+      }
+
+      &-version {
+        font-style: italic; // Делает весь текст версии курсивом
+      }
+
+      &-version-label {
+        font-style: italic; // Делает текст курсивом
+        margin-right: 5px;   // Добавляет отступ справа
+      }
+
+      &-highlight-main {
+        color: v.$color_palePurple; // Сохраняем тот же цвет, что и у content__text-highlight
+      }
+
+      &-highlight-update {
+        color: #32a5a0; // Задаем новый цвет
+      }
+    }
   }
 }
-
 
 // Fomod -------------------------------------
 
@@ -41,13 +143,13 @@
     transition: max-height 0.4s ease, opacity 0.4s ease;
     opacity: 0;
     pointer-events: none;
-    max-height: 0;
+    max-block-size: 0;
 
     &.open {
       opacity: 1;
       pointer-events: auto;
-      max-height: 9999px;
-	  transition: max-height 0.4s ease, opacity 0.4s ease;
+      max-block-size: 9999px;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
     }
   }
 
