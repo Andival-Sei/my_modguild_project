@@ -560,7 +560,7 @@ body {
 .gallery__indicators {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .gallery__indicator {
   width: 10px;
@@ -569,9 +569,11 @@ body {
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .gallery__indicator-active {
   background-color: #9499ff;
+  transform: scale(1.4);
 }
 
 .tag {

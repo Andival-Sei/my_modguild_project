@@ -231,7 +231,7 @@
   &__indicators {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   &__indicator {
@@ -241,10 +241,12 @@
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
 
   &__indicator-active {
     background-color: v.$color_palePurple;
+    transform: scale(1.4);
   }
 }
 
