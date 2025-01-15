@@ -208,14 +208,24 @@
     border: none;
     cursor: pointer;
     z-index: 10;
+
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: solid #ffffff;
+    border-width: 2px 2px 0 0;
+    transform: rotate(-135deg);
   }
 
   &__prev {
-    left: 10px;
+    left: 15px;
+    transform: rotate(-135deg);
   }
 
   &__next {
-    right: 10px;
+    right: 15px;
+    transform: rotate(45deg);
   }
 
   &__indicators {
