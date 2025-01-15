@@ -17,6 +17,9 @@ const nextButton = document.querySelector('.gallery__next');
 
 let currentIndex = 0;
 
+// Добавлен вызов функции для установки начального состояния галереи
+updateGallery(currentIndex);
+
 function updateGallery(index) {
   pages.forEach((page, i) => {
     // Изменено переключение класса на 'fomod__page-active'
@@ -25,6 +28,19 @@ function updateGallery(index) {
   indicators.forEach((indicator, i) => {
     indicator.classList.toggle('gallery__indicator-active', i === index);
   });
+
+  // Добавлено скрытие/отображение кнопок
+  if (index === 0) {
+    prevButton.style.display = 'none';
+  } else {
+    prevButton.style.display = 'block';
+  }
+
+  if (index === pages.length - 1) {
+    nextButton.style.display = 'none';
+  } else {
+    nextButton.style.display = 'block';
+  }
 }
 
 prevButton.addEventListener('click', () => {
