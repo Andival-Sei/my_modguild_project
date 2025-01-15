@@ -165,24 +165,29 @@
       transform: translateX(0);
     }
 
-	
     &-next {
-		visibility: visible;
-		position: relative;
-		transform: translateX(100%);
+      visibility: visible;
+      position: relative;
+      transform: translateX(100%);
     }
-	
+
     &-prev {
-		visibility: visible;
-		position: relative;
-		transform: translateX(-100%);
+      visibility: visible;
+      position: relative;
+      transform: translateX(-100%);
     }
-	
-	&:not(.fomod__page-active):not(.fomod__page-next):not(.fomod__page-prev) {
-	  visibility: hidden;
-	  position: absolute;
-	  transform: translateX(0);
-	}
+
+    &-hidden {
+      visibility: hidden;
+      position: absolute;
+      transform: translateX(0);
+    }
+
+    &:not(.fomod__page-active):not(.fomod__page-next):not(.fomod__page-prev) {
+      visibility: hidden;
+      position: absolute;
+      transform: translateX(0);
+    }
 
     &-title {
       padding-inline-start: 10px;

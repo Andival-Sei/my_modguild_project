@@ -81,3 +81,97 @@ indicators.forEach((indicator, i) => {
 });
 
 
+// jQuery(document).ready(function ($) {
+//   var slideCount = $('#fomod__content ul li').length;
+//   var slideWidth = $('#fomod__content ul li').width();
+//   var slideHeight = $('#fomod__content ul li').height();
+//   var sliderUlWidth = slideCount * slideWidth;
+
+//   $('#fomod__content').css({ width: slideWidth, height: slideHeight });
+//   $('#fomod__content ul').css({ width: sliderUlWidth, marginLeft: -slideWidth });
+//   $('#fomod__content ul li:last-child').prependTo('#fomod__content ul');
+
+//   function moveLeft() {
+//     $('#fomod__content ul').animate({
+//       left: +slideWidth
+//     }, 200, function () {
+//       $('#fomod__content ul li:last-child').prependTo('#fomod__content ul');
+//       $('#fomod__content ul').css('left', '');
+//     });
+//   }
+
+//   function moveRight() {
+//     $('#fomod__content ul').animate({
+//       left: -slideWidth
+//     }, 200, function () {
+//       $('#fomod__content ul li:first-child').appendTo('#fomod__content ul');
+//       $('#fomod__content ul').css('left', '');
+//     });
+//   }
+
+//   $('button.gallery__prev').click(function () {
+//     if ($('#fomod__content ul li:first-child').is(':first-child')) {
+//       return false; // Останавливаем, если это первый слайд
+//     }
+//     moveLeft();
+//   });
+
+//   $('button.gallery__next').click(function () {
+//     if ($('#fomod__content ul li:last-child').is(':last-child')) {
+//       return false; // Останавливаем, если это последний слайд
+//     }
+//     moveRight();
+//   });
+// });
+
+jQuery(document).ready(function ($) {
+  const pages = $('.fomod__page');
+  const prevButton = $('.gallery__prev');
+  const nextButton = $('.gallery__next');
+  const indicators = $('.gallery__indicator');
+  let currentIndex = 0;
+
+  function updateGallery(index) {
+    pages.removeClass('fomod__page-active fomod__page-next fomod__page-prev fomod__page-hidden');
+    indicators.removeClass('gallery__indicator-active');
+
+    pages.each(function (i) {
+      if (i === index) {
+        $(this).addClass('fomod__page-active');
+      } else if (i === index - 1) {
+        $(this).addClass('fomod__page-prev');
+      } else if (i === index + 1) {
+        $(this).addClass('fomod__page-next');
+      } else {
+        $(this).addClass('fomod__page-hidden');
+      }
+    });
+
+    indicators.eq(index).addClass('gallery__indicator-active');
+
+    prevButton.toggle(index > 0);
+    nextButton.toggle(index < pages.length - 1);
+  }
+
+  prevButton.click(function () {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateGallery(currentIndex);
+    }
+  });
+
+  nextButton.click(function () {
+    if (currentIndex < pages.length - 1) {
+      currentIndex++;
+      updateGallery(currentIndex);
+    }
+  });
+
+  indicators.click(function () {
+    const index = $(this).data('index');
+    currentIndex = index;
+    updateGallery(currentIndex);
+  });
+
+  updateGallery(currentIndex);
+});

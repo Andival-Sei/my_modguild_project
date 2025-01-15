@@ -514,6 +514,11 @@ body {
   position: relative;
   transform: translateX(-100%);
 }
+.fomod__page-hidden {
+  visibility: hidden;
+  position: absolute;
+  transform: translateX(0);
+}
 .fomod__page:not(.fomod__page-active):not(.fomod__page-next):not(.fomod__page-prev) {
   visibility: hidden;
   position: absolute;
