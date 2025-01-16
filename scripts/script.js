@@ -29,14 +29,31 @@ function switchSlide(currentSlide, newSlide, direction) {
     for (let i = 0; i < slides.length; i++) {
       if (slides[i] !== currentSlide && slides[i] !== newSlide) {
         slides[i].classList.remove("fomod__slide-prev", "fomod__slide-next");
-        if (i < Array.prototype.indexOf.call(slides, newSlide)) {
-          slides[i].classList.add("fomod__slide-prev");
-        } else if (i > Array.prototype.indexOf.call(slides, newSlide)) {
-          slides[i].classList.add("fomod__slide-next");
-        }
+        slides[i].style.visibility = 'hidden'; // Скрываем все слайды
       }
     }
+
+    // Устанавливаем классы prev и next для соседних слайдов
+    const newSlideIndex = Array.prototype.indexOf.call(slides, newSlide);
+    if (newSlideIndex > 0) {
+      slides[newSlideIndex - 1].classList.add("fomod__slide-prev");
+      slides[newSlideIndex - 1].style.visibility = 'visible'; // Делаем видимым предыдущий слайд
+    }
+    if (newSlideIndex < slides.length - 1) {
+      slides[newSlideIndex + 1].classList.add("fomod__slide-next");
+      slides[newSlideIndex + 1].style.visibility = 'visible'; // Делаем видимым следующий слайд
+    }
   }
+}
+
+let currentIndex = 0;
+
+// Функция для обновления позиции слайдов
+function updateSlidesPosition() {
+  const slides = document.querySelectorAll(".fomod__slide");
+  slides.forEach((slide, index) => {
+    slide.style.transform = `translateX(${(index - currentIndex) * 200}%)`;
+  });
 }
 
 // Получаем все элементы с классом "fomod__slider-next"
@@ -45,11 +62,11 @@ const nextButtons = document.getElementsByClassName("fomod__slider-next");
 // Добавляем обработчик события "click" для каждого элемента "fomod__slider-next"
 for (const button of nextButtons) {
   button.addEventListener("click", function() {
-    // Получаем текущий активный слайд
-    const currentSlide = document.querySelector(".fomod__slide-active");
-    // Получаем следующий слайд
-    const nextSlide = currentSlide.nextElementSibling;
-    switchSlide(currentSlide, nextSlide, 'next');
+    const slides = document.querySelectorAll(".fomod__slide");
+    if (currentIndex < slides.length - 1) {
+      currentIndex++;
+      updateSlidesPosition();
+    }
   });
 }
 
@@ -59,10 +76,12 @@ const prevButtons = document.getElementsByClassName("fomod__slider-prev");
 // Добавляем обработчик события "click" для каждого элемента "fomod__slider-prev"
 for (const button of prevButtons) {
   button.addEventListener("click", function() {
-    // Получаем текущий активный слайд
-    const currentSlide = document.querySelector(".fomod__slide-active");
-    // Получаем предыдущий слайд
-    const prevSlide = currentSlide.previousElementSibling;
-    switchSlide(currentSlide, prevSlide, 'prev');
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlidesPosition();
+    }
   });
 }
+
+// Инициализация позиции слайдов при загрузке страницы
+document.addEventListener("DOMContentLoaded", updateSlidesPosition);
