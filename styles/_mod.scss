@@ -254,10 +254,25 @@
   }
 
   &__slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
     &-active {
+      left: 0;
       visibility: visible;
       position: relative;
       transform: translateX(0);
+    }
+    &-prev {
+      transform: translateX(-100%);
+			visibility: hidden;
+    }
+
+    &-next {
+      transform: translateX(100%);
+			visibility: hidden;
     }
   }
 }

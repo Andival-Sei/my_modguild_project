@@ -12,71 +12,57 @@ for (const toggle of fomodToggle) {
   });
 }
 
-// // Получаем элементы галереи и кнопок управления
-// const gallery = document.querySelector('.fomod__gallery');
-// const pages = document.querySelectorAll('.fomod__page');
-// const indicators = document.querySelectorAll('.gallery__indicator');
-// const prevButton = document.querySelector('.gallery__prev');
-// const nextButton = document.querySelector('.gallery__next');
 
-// // Инициализируем текущий индекс страницы
-// let currentIndex = 0;
+// Функция для переключения слайдов
+function switchSlide(currentSlide, newSlide, direction) {
+  if (newSlide && newSlide.classList.contains("fomod__slide")) {
+    // Убираем класс "fomod__slide-active" у текущего слайда
+    currentSlide.classList.remove("fomod__slide-active");
+    currentSlide.classList.add(direction === 'next' ? "fomod__slide-prev" : "fomod__slide-next");
 
-// // Вызываем функцию для установки начального состояния галереи
-// updateGallery(currentIndex);
+    // Добавляем класс "fomod__slide-active" новому слайду
+    newSlide.classList.add("fomod__slide-active");
+    newSlide.classList.remove(direction === 'next' ? "fomod__slide-next" : "fomod__slide-prev");
 
-// /**
-//  * Функция для обновления состояния галереи
-//  * @param {number} index - текущий индекс активной страницы
-//  */
-// function updateGallery(index) {
-//   // Перебираем все страницы и обновляем их классы
-//   pages.forEach((page, i) => {
-//     // Устанавливаем класс "fomod__page-active" для активной страницы
-//     page.classList.toggle('fomod__page-active', i === index);
-//   });
+    // Обновляем классы для всех слайдов
+    const slides = document.getElementsByClassName("fomod__slide");
+    for (let i = 0; i < slides.length; i++) {
+      if (slides[i] !== currentSlide && slides[i] !== newSlide) {
+        slides[i].classList.remove("fomod__slide-prev", "fomod__slide-next");
+        if (i < Array.prototype.indexOf.call(slides, newSlide)) {
+          slides[i].classList.add("fomod__slide-prev");
+        } else if (i > Array.prototype.indexOf.call(slides, newSlide)) {
+          slides[i].classList.add("fomod__slide-next");
+        }
+      }
+    }
+  }
+}
 
-//   // Перебираем все индикаторы и обновляем их классы
-//   indicators.forEach((indicator, i) => {
-//     // Устанавливаем класс "gallery__indicator-active" для активного индикатора
-//     indicator.classList.toggle('gallery__indicator-active', i === index);
-//   });
+// Получаем все элементы с классом "fomod__slider-next"
+const nextButtons = document.getElementsByClassName("fomod__slider-next");
 
-//   // Скрываем кнопку "prev" на первой странице и показываем на остальных
-//   if (index === 0) {
-//     prevButton.style.display = 'none';
-//   } else {
-//     prevButton.style.display = 'block';
-//   }
+// Добавляем обработчик события "click" для каждого элемента "fomod__slider-next"
+for (const button of nextButtons) {
+  button.addEventListener("click", function() {
+    // Получаем текущий активный слайд
+    const currentSlide = document.querySelector(".fomod__slide-active");
+    // Получаем следующий слайд
+    const nextSlide = currentSlide.nextElementSibling;
+    switchSlide(currentSlide, nextSlide, 'next');
+  });
+}
 
-//   // Скрываем кнопку "next" на последней странице и показываем на остальных
-//   if (index === pages.length - 1) {
-//     nextButton.style.display = 'none';
-//   } else {
-//     nextButton.style.display = 'block';
-//   }
-// }
+// Получаем все элементы с классом "fomod__slider-prev"
+const prevButtons = document.getElementsByClassName("fomod__slider-prev");
 
-// // Добавляем обработчик события "click" для кнопки "prev"
-// prevButton.addEventListener('click', () => {
-//   // Уменьшаем текущий индекс и обновляем галерею
-//   currentIndex = (currentIndex - 1 + pages.length) % pages.length;
-//   updateGallery(currentIndex);
-// });
-
-// // Добавляем обработчик события "click" для кнопки "next"
-// nextButton.addEventListener('click', () => {
-//   // Увеличиваем текущий индекс и обновляем галерею
-//   currentIndex = (currentIndex + 1) % pages.length;
-//   updateGallery(currentIndex);
-// });
-
-// // Добавляем обработчик события "click" для каждого индикатора
-// indicators.forEach((indicator, i) => {
-//   indicator.addEventListener('click', () => {
-//     // Устанавливаем текущий индекс на индекс индикатора и обновляем галерею
-//     currentIndex = i;
-//     updateGallery(currentIndex);
-//   });
-// });
-
+// Добавляем обработчик события "click" для каждого элемента "fomod__slider-prev"
+for (const button of prevButtons) {
+  button.addEventListener("click", function() {
+    // Получаем текущий активный слайд
+    const currentSlide = document.querySelector(".fomod__slide-active");
+    // Получаем предыдущий слайд
+    const prevSlide = currentSlide.previousElementSibling;
+    switchSlide(currentSlide, prevSlide, 'prev');
+  });
+}

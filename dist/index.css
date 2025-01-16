@@ -568,10 +568,26 @@ body {
   background-color: #9499ff;
   transform: scale(1.4);
 }
+.fomod__slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
 .fomod__slide-active {
+  left: 0;
   visibility: visible;
   position: relative;
   transform: translateX(0);
+}
+.fomod__slide-prev {
+  transform: translateX(-100%);
+  visibility: hidden;
+}
+.fomod__slide-next {
+  transform: translateX(100%);
+  visibility: hidden;
 }
 
 .tag {
