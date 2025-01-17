@@ -194,19 +194,36 @@
   line-height: 24px;
   &__title {
     position: absolute;
-    inset: 0;
+    inset-block-start: 0;
+	inset-inline-start: 0;
     margin: 5px 5px;
+	display: inline-block;
   }
 
-  &__notice {
+  &__list {
+	&-item {
+		margin: 10px 0 10px 50px;
+		list-style-type: disc;
+	}
+  }
+
+  &--notice {
     color: v.$color_lightLavender;
     background-color: v.$color_darkIndigo;
   }
-  &__warning {
+  &--warning {
     background-color: v.$color_darkBrown;
     border: {
       color: v.$color_gold;
     }
     color: v.$color_gold;
   }
+  &--removal-tool {
+	border: 1px solid v.$color_azureBlue;
+  }
+  &--removal-tool .messagebox__title{
+	color: v.$color_azureBlue;
+	
+  }
+
 }

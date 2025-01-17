@@ -354,17 +354,29 @@ body {
 }
 .messagebox__title {
   position: absolute;
-  inset: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   margin: 5px 5px;
+  display: inline-block;
 }
-.messagebox__notice {
+.messagebox__list-item {
+  margin: 10px 0 10px 50px;
+  list-style-type: disc;
+}
+.messagebox--notice {
   color: #bcc0ea;
   background-color: #212131;
 }
-.messagebox__warning {
+.messagebox--warning {
   background-color: #3c3422;
   border-color: #f9b440;
   color: #f9b440;
+}
+.messagebox--removal-tool {
+  border: 1px solid #206caf;
+}
+.messagebox--removal-tool .messagebox__title {
+  color: #206caf;
 }
 
 .mod {
@@ -375,6 +387,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+.mod__block-title {
+  display: flex;
+  justify-content: space-between;
 }
 .mod__title {
   font-size: 20px;

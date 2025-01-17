@@ -8,6 +8,12 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+	&__block-title {
+		display: flex;
+		justify-content: space-between;
+	}
+
   &__title {
     font-size: 20px;
   }
@@ -311,6 +317,7 @@
 
   &--removal-tool {
     background-color: v.$color_azureBlue;
+	
   }
 
   &--tool {
