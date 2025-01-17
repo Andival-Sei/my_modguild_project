@@ -220,9 +220,12 @@
   }
   &--removal-tool {
 	border: 1px solid v.$color_azureBlue;
+	background-color: #35353a;
+	margin-block-end: 0;
   }
   &--removal-tool .messagebox__title{
 	color: v.$color_azureBlue;
+	
 	
   }
 

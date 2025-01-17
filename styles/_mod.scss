@@ -70,6 +70,7 @@
   }
 
   &__files {
+		margin-block-start: 20px;
     padding: 20px;
     border: 1px solid v.$color_grey; // Изменяем цвет границы на серый
     border-radius: 10px;
@@ -78,7 +79,7 @@
     gap: 10px;
     &-legend {
       color: v.$color_grey;
-      margin-left: 30px;
+      margin-inline-start: 30px;
       padding: 0 10px; // Добавляем внутренний отступ слева
     }
 
