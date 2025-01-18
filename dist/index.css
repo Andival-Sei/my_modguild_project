@@ -363,6 +363,13 @@ body {
   margin: 10px 0 10px 50px;
   list-style-type: disc;
 }
+.messagebox__list-ol {
+  list-style-type: decimal;
+}
+.messagebox__list-ol .messagebox__list-item {
+  list-style-type: decimal;
+  margin: 10px 0 10px 50px;
+}
 .messagebox--notice {
   color: #bcc0ea;
   background-color: #212131;
@@ -372,13 +379,21 @@ body {
   border-color: #f9b440;
   color: #f9b440;
 }
-.messagebox--removal-tool {
-  border: 1px solid #206caf;
+.messagebox:not(.messagebox--notice):not(.messagebox--warning) {
   background-color: #35353a;
   margin-block-end: 0;
 }
+.messagebox--removal-tool {
+  border: 1px solid #206caf;
+}
 .messagebox--removal-tool .messagebox__title {
   color: #206caf;
+}
+.messagebox--special-instructions {
+  border: 1px solid #831482;
+}
+.messagebox--special-instructions .messagebox__title {
+  color: white;
 }
 
 .mod {
@@ -654,5 +669,5 @@ body {
   background-color: #831482;
 }
 .tag--special-instructions {
-  background-color: #f724f7;
+  background-color: #9a1c9a;
 }
