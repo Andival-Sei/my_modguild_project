@@ -349,7 +349,8 @@
               </div>
               <hr class="mod__hr" />
               <p class="mod__description">
-                skse64 для исправления различных проблем с движком Skyrim Special Edition.
+                skse64 для исправления различных проблем с движком Skyrim
+                Special Edition.
               </p>
               <fieldset class="mod__files">
                 <legend class="mod__files-legend">Файлы для скачивания</legend>
@@ -379,18 +380,341 @@
 
               <article class="messagebox messagebox--special-instructions">
                 <h3 class="messagebox__title">Special Intstructions</h3>
-                <p class="messagebox__description">Обратите вниамание, что регистр важен!</p>
+                <p class="messagebox__description">
+                  Обратите вниамание, что регистр важен!
+                </p>
                 <ol class="messagebox__list-ol">
                   <li class="messagebox__list-item">
                     После установки откройте и измените следующее:
+                    <span class="highlight highlight--file-path"
+                      >skse\plugins\EngineFixes.toml</span
+                    >
+                    <pre class="highlight-block"><code>
+	[Patches]
+	MaxStdio = 8192
+	RegularQuicksaves = true
+	[Experimental]
+	SaveGameMaxSize = true</code>
+                    </pre>
                   </li>
                   <li class="messagebox__list-item">
-                    Извлеките исправления движка (Часть 2) - предварительный загрузчик skse64 и TBB Lib и установите файлы в папку каталога Main Skyrim Special Edition.
+                    Извлеките (Part 2) Engine Fixes - skse64 Preloader and TBB
+                    Lib и установите файлы в корневую папку каталога Skyrim
+                    Special Edition.
                   </li>
-                  
-                  
                 </ol>
               </article>
+            </article>
+
+            <article class="mod">
+              <h3 class="mod__title">Actor Limit Fix</h3>
+              <div class="mod__info">
+                <a
+                  href="https://www.nexusmods.com/skyrimspecialedition/mods/32349?"
+                  class="mod__info-download"
+                  target="_blank"
+                  >Скачать</a
+                >
+                <span class="mod__info-version"
+                  ><span class="mod__info-version-label">Версия:</span> 9</span
+                >
+                <span class="mod__info-author"
+                  ><span class="mod__info-author-label">Автор:</span
+                  >meh321</span
+                >
+              </div>
+              <hr class="mod__hr" />
+              <p class="mod__description">
+                Увеличивает количество актеров, которые могут двигаться, делать
+                мимику и синхронизировать губы с репликами голоса в любой момент
+                времени.
+              </p>
+              <fieldset class="mod__files">
+                <legend class="mod__files-legend">Файлы для скачивания</legend>
+                <div class="mod__files-item">
+                  <span
+                    class="mod__files-item-highlight-main mod__files-item-type"
+                    >Main Files</span
+                  ><span class="mod__files-item-name"
+                    >Actor Limit Fix - Anniversary Edition (1.6.629.0 and
+                    later)</span
+                  ><span class="mod__files-item-version"
+                    ><span class="mod__files-item-version-label">Version:</span
+                    >9</span
+                  >
+                </div>
+              </fieldset>
+            </article>
+
+            <article class="mod">
+              <h3 class="mod__title">Barter Limit Fix</h3>
+              <div class="mod__info">
+                <a
+                  href="https://www.nexusmods.com/skyrimspecialedition/mods/77173?"
+                  class="mod__info-download"
+                  target="_blank"
+                  >Скачать</a
+                >
+                <span class="mod__info-version"
+                  ><span class="mod__info-version-label">Версия:</span>1.0</span
+                >
+                <span class="mod__info-author"
+                  ><span class="mod__info-author-label">Автор:</span
+                  >powerofthree and KernalsEgg
+                </span>
+              </div>
+              <hr class="mod__hr" />
+              <p class="mod__description">
+                Плагин SKSE, который исправляет торговлю с торговцами с более
+                чем 32 767 золотом.
+              </p>
+              <fieldset class="mod__files">
+                <legend class="mod__files-legend">Файлы для скачивания</legend>
+                <div class="mod__files-item">
+                  <span
+                    class="mod__files-item-highlight-main mod__files-item-type"
+                    >Main Files</span
+                  ><span class="mod__files-item-name">Barter Limit Fix</span
+                  ><span class="mod__files-item-version"
+                    ><span class="mod__files-item-version-label">Version:</span
+                    >1.0</span
+                  >
+                </div>
+              </fieldset>
+            </article>
+            <article class="mod">
+              <h3 class="mod__title">Equip Enchantment Fix</h3>
+              <div class="mod__info">
+                <a
+                  href="https://www.nexusmods.com/skyrimspecialedition/mods/42839?"
+                  class="mod__info-download"
+                  target="_blank"
+                  >Скачать</a
+                >
+                <span class="mod__info-version"
+                  ><span class="mod__info-version-label">Версия:</span
+                  >1.3.6</span
+                >
+                <span class="mod__info-author"
+                  ><span class="mod__info-author-label">Автор:</span
+                  >SlavicPotato
+                </span>
+              </div>
+              <hr class="mod__hr" />
+              <p class="mod__description">
+                Этот мод исправляет ошибки движка, из-за которых чары предметов
+                не применяются при экипировке или перестают работать, пока
+                предмет все еще экипирован. Плагин SKSE64.
+              </p>
+              <fieldset class="mod__files">
+                <legend class="mod__files-legend">Файлы для скачивания</legend>
+                <div class="mod__files-item">
+                  <span
+                    class="mod__files-item-highlight-main mod__files-item-type"
+                    >Main Files</span
+                  ><span class="mod__files-item-name"
+                    >Equip Enchantment Fix for 1.6.629 and newer</span
+                  ><span class="mod__files-item-version"
+                    ><span class="mod__files-item-version-label">Version:</span
+                    >1.0</span
+                  >
+                </div>
+              </fieldset>
+            </article>
+            <article class="mod">
+              <h3 class="mod__title">
+                Fix Note icon for SkyUI (SKSE64 plugin)
+              </h3>
+              <div class="mod__info">
+                <a
+                  href="https://www.nexusmods.com/skyrimspecialedition/mods/32561?"
+                  class="mod__info-download"
+                  target="_blank"
+                  >Скачать</a
+                >
+                <span class="mod__info-version"
+                  ><span class="mod__info-version-label">Версия:</span
+                  >1.2.6</span
+                >
+                <span class="mod__info-author"
+                  ><span class="mod__info-author-label">Автор:</span>0xC0000005
+                </span>
+              </div>
+              <hr class="mod__hr" />
+              <p class="mod__description">
+                Плагин SKSE64, который исправляет иконку и тип буквы/заметки для
+                SkyUI.
+              </p>
+              <fieldset class="mod__files">
+                <legend class="mod__files-legend">Файлы для скачивания</legend>
+                <div class="mod__files-item">
+                  <span
+                    class="mod__files-item-highlight-main mod__files-item-type"
+                    >Main Files</span
+                  ><span class="mod__files-item-name"
+                    >FixNotesForSkyUI Skyrim AE</span
+                  ><span class="mod__files-item-version"
+                    ><span class="mod__files-item-version-label">Version:</span
+                    >1.2.6</span
+                  >
+                </div>
+              </fieldset>
+            </article>
+            <article class="mod">
+              <h3 class="mod__title">I'm walkin' here NG</h3>
+              <div class="mod__info">
+                <a
+                  href="https://www.nexusmods.com/skyrimspecialedition/mods/77394?"
+                  class="mod__info-download"
+                  target="_blank"
+                  >Скачать</a
+                >
+                <span class="mod__info-version"
+                  ><span class="mod__info-version-label">Версия:</span>1.7</span
+                >
+                <span class="mod__info-author"
+                  ><span class="mod__info-author-label">Автор:</span
+                  >Ryan---VersuchDrei
+                </span>
+              </div>
+              <hr class="mod__hr" />
+              <p class="mod__description">
+                Не позволяет NPC толкать вас, когда вы ГУЛЯЕТЕ и общаетесь с
+                друзьями. Это преобразование I'm walkin' here в CLib-NG создает
+                один файл .dll, который работает во всех версиях Skyrim SE,
+                включая AE 1.6.629+.
+              </p>
+              <fieldset class="mod__files">
+                <legend class="mod__files-legend">Файлы для скачивания</legend>
+                <div class="mod__files-item">
+                  <span
+                    class="mod__files-item-highlight-main mod__files-item-type"
+                    >Main Files</span
+                  ><span class="mod__files-item-name">I'm walkin' here</span
+                  ><span class="mod__files-item-version"
+                    ><span class="mod__files-item-version-label">Version:</span
+                    >1.7</span
+                  >
+                </div>
+              </fieldset>
+            </article>
+            <article class="mod">
+              <h3 class="mod__title">Keyword Item Distributor (KID)</h3>
+              <div class="mod__info">
+                <a
+                  href="https://www.nexusmods.com/skyrimspecialedition/mods/55728?"
+                  class="mod__info-download"
+                  target="_blank"
+                  >Скачать</a
+                >
+                <span class="mod__info-version"
+                  ><span class="mod__info-version-label">Версия:</span
+                  >3.4.0</span
+                >
+                <span class="mod__info-author"
+                  ><span class="mod__info-author-label">Автор:</span
+                  >Ryan---VersuchDrei
+                </span>
+              </div>
+              <hr class="mod__hr" />
+              <p class="mod__description">
+                Плагин SKSE, который распределяет ключевые слова для
+                оружия/брони/магических эффектов/проглатываемых предметов и
+                других предметов, используя конфигурационные файлы.
+              </p>
+              <fieldset class="mod__files">
+                <legend class="mod__files-legend">Файлы для скачивания</legend>
+                <div class="mod__files-item">
+                  <span
+                    class="mod__files-item-highlight-main mod__files-item-type"
+                    >Main Files</span
+                  ><span class="mod__files-item-name"
+                    >Keyword Item Distributor</span
+                  ><span class="mod__files-item-version"
+                    ><span class="mod__files-item-version-label">Version:</span
+                    >3.4.0</span
+                  >
+                </div>
+              </fieldset>
+
+              <article class="fomod">
+                <p class="fomod__text fomod__toggle">
+                  <span class="content__text-highlight">Fomod инструкция</span>
+                  - Keyword Item Distributor
+                </p>
+                <div class="fomod__content">
+                  <ul class="fomod__gallery gallery">
+                    <li class="fomod__page fomod__page-active">
+                      <p class="fomod__page-title">Main</p>
+                      <div class="fomod__page-content">
+                        <fieldset class="fomod__section">
+                          <legend class="fomod__section-label">DLL</legend>
+
+                          <div class="fomod__section-item">
+                            <input
+                              type="radio"
+                              onclick="return false"
+                              checked="checked"
+                              tabindex="0"
+                            />
+                            SSE v1.6+ ("Anniversary Edition")
+                          </div>
+                        </fieldset>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <button class="gallery__prev"></button>
+                  <button class="gallery__next"></button>
+                  <div class="gallery__indicators">
+                    <div
+                      class="gallery__indicator gallery__indicator-active"
+                      data-index="0"
+                    ></div>
+                    <div class="gallery__indicator" data-index="1"></div>
+                    <div class="gallery__indicator" data-index="2"></div>
+                  </div>
+                </div>
+              </article>
+            </article>
+            <article class="mod">
+              <h3 class="mod__title">Mum's the Word NG</h3>
+              <div class="mod__info">
+                <a
+                  href="https://www.nexusmods.com/skyrimspecialedition/mods/77409"
+                  class="mod__info-download"
+                  target="_blank"
+                  >Скачать</a
+                >
+                <span class="mod__info-version"
+                  ><span class="mod__info-version-label">Версия:</span>2.1</span
+                >
+                <span class="mod__info-author"
+                  ><span class="mod__info-author-label">Автор:</span
+                  >Ryan---VersuchDrei
+                </span>
+              </div>
+              <hr class="mod__hr" />
+              <p class="mod__description">
+                Этот мод удаляет украденную метку с бесполезных предметов,
+                которые вы крадете, до тех пор, пока никто этого не заметит. Это
+                преобразование Mum's the Word в CLib-NG создает один файл .dll,
+                который работает во всех версиях Skyrim SE, включая AE 1.6.629+
+                и VR!
+              </p>
+              <fieldset class="mod__files">
+                <legend class="mod__files-legend">Файлы для скачивания</legend>
+                <div class="mod__files-item">
+                  <span
+                    class="mod__files-item-highlight-main mod__files-item-type"
+                    >Main Files</span
+                  ><span class="mod__files-item-name">Mum's the Word</span
+                  ><span class="mod__files-item-version"
+                    ><span class="mod__files-item-version-label">Version:</span
+                    >2.1</span
+                  >
+                </div>
+              </fieldset>
             </article>
           </section>
 

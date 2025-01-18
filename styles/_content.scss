@@ -246,3 +246,18 @@
     color: white;
   }
 }
+
+.highlight{
+	&--file-path {
+		color: #35353a;
+		background-color: white;
+		border-radius: 3px;
+		padding: 5px;
+	}
+}
+
+.highlight-block {
+	margin: 10px;
+	background-color: #27272b;
+	border-radius: 10px;
+}
